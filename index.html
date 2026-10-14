@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kartik Soni · AI/ML Engineer</title>
+  <meta name="description" content="Kartik Soni, final-year B.Tech AI & ML student at NMIMS Mumbai. Quantization, GPU kernels, retrieval and physics-informed ML.">
+  <meta name="author" content="Kartik Soni">
+  <meta name="theme-color" content="#eef3f7">
+  <link rel="canonical" href="https://kartiks15.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kartiks15.github.io/">
+  <meta property="og:title" content="Kartik Soni · AI/ML Engineer">
+  <meta property="og:description" content="Quantization, GPU kernels, retrieval and physics-informed ML. Final-year B.Tech, NMIMS Mumbai.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 3 58 18v28L32 61 6 46V18z' fill='%232fa84f'/%3E%3Cpath d='M32 3 58 18 32 32 6 18z' fill='%236ddc5f'/%3E%3Ctext x='32' y='42' font-family='Arial Black,Arial' font-weight='900' font-size='22' text-anchor='middle' fill='%23fff'%3EKS%3C/text%3E%3C/svg%3E">
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      d.classList.remove('no-js'); d.classList.add('js');
+      try { t = localStorage.getItem('ks-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      d.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Lilita+One&family=Rubik:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Icon sprite -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-msg" viewBox="0 0 24 24"><path d="M5 4.5h14A1.5 1.5 0 0 1 20.5 6v9a1.5 1.5 0 0 1-1.5 1.5h-8L6 20.5v-4H5A1.5 1.5 0 0 1 3.5 15V6A1.5 1.5 0 0 1 5 4.5z"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9.5 3h5M10.5 3v5.5L5.2 18a2 2 0 0 0 1.75 3h10.1a2 2 0 0 0 1.75-3L13.5 8.5V3M7.6 14.5h8.8"/></symbol>
+    <symbol id="i-mix" viewBox="0 0 24 24"><path d="M5.5 10h13l-1.4 8.6a2 2 0 0 1-2 1.7H8.9a2 2 0 0 1-2-1.7z"/><circle cx="9" cy="5.5" r="1.6"/><circle cx="14.5" cy="3.8" r="1.1"/><circle cx="14.8" cy="7.4" r="1.3"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M6 3.5h10.5a2.5 2.5 0 0 1 2.5 2.5v14.5H8.5A2.5 2.5 0 0 1 6 18z"/><path d="M6 18a2.5 2.5 0 0 1 2.5-2.5H19M10 8h5"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5.5a2.5 2.5 0 0 0 2.7 3.6M16 6h2.5a2.5 2.5 0 0 1-2.7 3.6M12 13v3.5M8.5 20.5h7M9.6 20.5l.5-4h3.8l.5 4"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.8 18.3h2.4"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M19.5 14.6A8 8 0 1 1 9.4 4.5a6.4 6.4 0 0 0 10.1 10.1z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8.5 7H17v8.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="12" height="12" rx="2"/><path d="M15.5 8.5V5a1.5 1.5 0 0 0-1.5-1.5H5A1.5 1.5 0 0 0 3.5 5v9A1.5 1.5 0 0 0 5 15.5h3.5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.2 2.7 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.5 2.9 1.2-6.1-4.5-4.2 6.1-.8z"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9.5 12 4.5l10 5-10 5z"/><path d="M6 11.5v4.5c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5M22 9.5V15"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3.5 7.5A1.5 1.5 0 0 1 5 6h14a1.5 1.5 0 0 1 1.5 1.5V10a2 2 0 0 0 0 4v2.5A1.5 1.5 0 0 1 19 18H5a1.5 1.5 0 0 1-1.5-1.5V14a2 2 0 0 0 0-4z"/><path d="M14.5 6v12"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M13 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h4"/><path d="M13 3l5 5v2M13 3v5h5"/><circle cx="16" cy="15.5" r="3.2"/><path d="m18.4 17.9 2.6 2.6"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><path d="m4 16 4.5-5 3.5 3 4-7 4.5 4.5"/><circle cx="16" cy="7" r="1.6"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3.5 3 8.5l9 5 9-5z"/><path d="m3 12.5 9 5 9-5M3 16.5l9 5 9-5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10-6.5z" fill="currentColor"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5 4.5 13.5h6.5l-1 8 8.5-11h-6.5z"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4.5h4.5"/></symbol>
+    <symbol id="i-cert" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M9 13.8 8 21l4-2 4 2-1-7.2"/></symbol>
+    <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" stroke="none" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.4v.1M12 17v-6.5M12 13.6c0-1.8 1-3.1 2.6-3.1 1.5 0 2.4 1 2.4 3V17"/></symbol>
+  </svg>
+
+  <!-- HUD -->
+  <header class="hud" id="hud">
+    <div class="hud__inner">
+      <a class="hud__rank" href="#top" aria-label="Back to top. Your reading rank">
+        <span class="rank-badge" aria-hidden="true"><span class="js-rank-num">1</span></span>
+        <span class="rank-meta">
+          <span class="rank-name"><span class="js-rank-name">Street Rat</span> <span class="rank-tier js-rank-tier">I</span></span>
+          <span class="xp" aria-hidden="true"><span class="xp__bar"><span class="xp__fill js-xp-fill"></span></span><span class="xp__num"><span class="js-xp">0</span> XP</span></span>
+        </span>
+      </a>
+      <nav class="hud__nav" aria-label="Sections">
+        <a href="#about">Messages</a>
+        <a href="#products">Products</a>
+        <a href="#lab">Lab</a>
+        <a href="#mixing">Mixing</a>
+        <a href="#journal">Journal</a>
+        <a href="#contact">Contacts</a>
+      </nav>
+      <div class="hud__right">
+        <span class="hud__clock js-clock" title="Your local time">Mon 12:00 PM</span>
+        <button class="icon-btn js-theme" type="button" aria-label="Switch theme">
+          <svg class="ico ico--sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="ico ico--moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+        <button class="icon-btn icon-btn--phone js-open-phone" type="button" aria-haspopup="dialog" aria-controls="phone-dialog">
+          <svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span>Phone</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <div class="tip" id="tip" role="tooltip" hidden></div>
+
+  <main id="main">
+
+    <!-- ============ TITLE SCREEN ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__sky" aria-hidden="true"></div>
+      <svg class="hero__scene js-scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false"></svg>
+      <div class="hero__content wrap">
+        <div class="hero__title-wrap">
+          <span class="sticker">Early access</span>
+          <h1 class="hero__title" id="hero-title"><span>Kartik</span> <span class="hero__title-accent">Soni</span></h1>
+        </div>
+        <div class="menu-panel">
+          <p class="hero__tagline">Final-year B.Tech in AI &amp; ML at NMIMS, Mumbai. I work on what models compute and what it costs to run them: quantization, GPU kernels, retrieval.</p>
+          <nav class="main-menu" aria-label="Main menu">
+            <a class="main-menu__item is-primary" href="#about"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg>Continue</a>
+            <a class="main-menu__item" href="#products">Products</a>
+            <a class="main-menu__item" href="#lab">Lab notes</a>
+            <a class="main-menu__item" href="#journal">Journal</a>
+            <a class="main-menu__item" href="docs/Kartik_Resume.pdf" target="_blank" rel="noopener">Resume <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="main-menu__item" href="#contact">Contacts</a>
+          </nav>
+        </div>
+      </div>
+      <div class="hero__foot wrap" aria-hidden="true">
+        <span>build 2026.10 · early access</span>
+        <span class="scroll-hint">scroll to start <span class="scroll-hint__arrow">↓</span></span>
+      </div>
+    </section>
+
+    <!-- ============ MESSAGES / ABOUT ============ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="app-chip"><span class="app-ico app-ico--green"><svg class="ico" aria-hidden="true"><use href="#i-msg"/></svg></span>Messages<span class="app-chip__badge">1</span></span>
+          <h2 id="about-title">Hey, I'm Kartik</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="phone reveal">
+            <div class="phone__notch" aria-hidden="true"></div>
+            <div class="phone__screen">
+              <div class="phone__status" aria-hidden="true">
+                <span class="js-phone-time">12:00</span>
+                <svg viewBox="0 0 54 12" width="54" height="12"><g fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="6" width="3" height="6" rx="1"/><rect x="9" y="3.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="1" width="3" height="11" rx="1"/></g><path d="M22 5.2a8 8 0 0 1 10 0M24 7.6a4.6 4.6 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="27" cy="10" r="1.3" fill="currentColor"/><rect x="36.5" y="1.5" width="15" height="9" rx="2.5" fill="none" stroke="currentColor" stroke-opacity=".5"/><rect x="38.2" y="3.2" width="9" height="5.6" rx="1.2" fill="currentColor"/><rect x="52.5" y="4.5" width="1.5" height="3" rx=".6" fill="currentColor" fill-opacity=".5"/></svg>
+              </div>
+              <div class="chat-head">
+                <svg class="ico chat-head__back" aria-hidden="true"><use href="#i-back"/></svg>
+                <span class="chat-head__avatar" aria-hidden="true">KS</span>
+                <span class="chat-head__who"><b>Kartik</b><small><span class="dot dot--live"></span>online</small></span>
+              </div>
+              <div class="chat js-chat" role="log" aria-live="polite" aria-label="Chat with Kartik">
+                <p class="chat__day">Today</p>
+                <div class="msg msg--them">hey 👋 it's kartik</div>
+                <div class="msg msg--them">final-year b.tech in ai &amp; ml at nmims, mumbai</div>
+                <div class="msg msg--them">i like the parts of ml that sit close to the hardware. what a model computes, and what it costs in memory, time and energy</div>
+              </div>
+              <div class="replies js-replies" aria-label="Reply options">
+                <span class="replies__label">Reply</span>
+              </div>
+            </div>
+          </div>
+
+          <article class="panel profile reveal">
+            <div class="profile__head">
+              <div class="avatar" aria-hidden="true">KS</div>
+              <div>
+                <p class="eyebrow">Player profile</p>
+                <h3 class="profile__name">Kartik Soni</h3>
+                <p class="profile__class">AI/ML engineer · inference &amp; efficiency</p>
+              </div>
+            </div>
+
+            <dl class="profile__stats">
+              <div><dt>Base</dt><dd>Mumbai, India</dd></div>
+              <div><dt>Level</dt><dd>Final year, B.Tech</dd></div>
+              <div><dt>Guild</dt><dd>NMIMS MPSTME</dd></div>
+              <div><dt>Status</dt><dd><span class="dot dot--live"></span>Open to research roles</dd></div>
+            </dl>
+
+            <div class="profile__bio">
+              <p>I'm a final-year B.Tech student in Artificial Intelligence and Machine Learning at SVKM's NMIMS MPSTME, Mumbai. I like the parts of ML that sit inside the model and close to the hardware: what an LLM computes, where inference time, memory and energy go, and how to run a good model on modest infrastructure.</p>
+              <p>Before the thesis I built a physics-informed PM2.5 forecaster that won ANRF AISEHack 2026, an offline multimodal RAG system, and a natural-language interface for ocean data. In summer 2026 I interned as a data analyst at Bhilwara Hulchul.</p>
+            </div>
+
+            <h4 class="mini-head">Currently</h4>
+            <ul class="now-list">
+              <li><span class="app-ico app-ico--blue"><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg></span><span><b>Thesis</b>FP4 vs NF4: the energy and accuracy cost of 4-bit LLMs</span></li>
+              <li><span class="app-ico app-ico--orange"><svg class="ico" aria-hidden="true"><use href="#i-bolt"/></svg></span><span><b>Capstone</b>A Triton matmul kernel aimed at lower GPU power draw</span></li>
+              <li><span class="app-ico app-ico--teal"><svg class="ico" aria-hidden="true"><use href="#i-cpu"/></svg></span><span><b>Koala</b>A vector search library with Triton GPU kernels</span></li>
+            </ul>
+
+            <div class="btn-row">
+              <a class="btn btn--primary" href="docs/Kartik_Resume.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-file"/></svg>Resume (PDF)</a>
+              <a class="btn" href="docs/Research%20Associate%20Statement.pdf" target="_blank" rel="noopener">Research statement</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTS / PROJECTS ============ -->
+    <section class="section section--alt" id="products" aria-labelledby="products-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="app-chip"><span class="app-ico app-ico--orange"><svg class="ico" aria-hidden="true"><use href="#i-box"/></svg></span>Products<span class="app-chip__badge">4</span></span>
+          <h2 id="products-title">Products</h2>
+          <p class="sec-head__lede">Things I've built. Each one lists its effects (the stack) and the numbers it hit.</p>
+        </header>
+
+        <div class="products">
+          <!-- Featured -->
+          <article class="panel product product--featured reveal" id="p-pm25" data-name="PM2.5 Forecaster" data-kind="Product" data-uses="python pytorch amp numpy git">
+            <div class="product__main">
+              <div class="product__top">
+                <div class="product__art app-ico app-ico--orange" aria-hidden="true">
+                  <svg viewBox="0 0 64 64"><path d="M17 41h30a9 9 0 0 0 1-17.9A13 13 0 0 0 23.3 19 10 10 0 0 0 17 41z" fill="#fff"/><g fill="#d4621f"><circle cx="26" cy="31" r="2.3"/><circle cx="33" cy="26.5" r="1.7"/><circle cx="38.5" cy="33" r="2.5"/><circle cx="31.5" cy="35.5" r="1.5"/></g><path d="M11 49h26a4 4 0 1 0-4-4M19 55h18" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/></svg>
+                </div>
+                <div class="product__titles">
+                  <p class="product__meta">Physics-informed ML · Feb – Apr 2026</p>
+                  <h3>PM2.5 Forecaster</h3>
+                </div>
+                <span class="pill pill--gold"><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg>1st place · ANRF AISEHack 2026</span>
+              </div>
+              <p class="product__desc">Forecasts PM2.5 concentration fields over India up to 16 hours ahead. A ConvLSTM encoder reads 10 hours of weather and emissions data. The decoder rolls forward one hour at a time, and a WindWarp module moves pollution along the wind field using differentiable grid sampling, so transport follows the physics instead of being learned from scratch.</p>
+              <ol class="recipe" aria-label="Model pipeline">
+                <li class="recipe__step">10 h of history<small>15 weather &amp; emission variables</small></li>
+                <li class="recipe__step">ConvLSTM encoder<small>with dilated convolutions</small></li>
+                <li class="recipe__step">WindWarp decoder<small>advection + spatial attention</small></li>
+                <li class="recipe__step recipe__step--out">16 h PM2.5 forecast<small>140 × 124 grid over India</small></li>
+              </ol>
+              <div class="fx-row">
+                <span class="fx-label">Effects</span>
+                <span class="fx fx--orange">Physics-informed</span>
+                <span class="fx fx--blue">Spatio-temporal</span>
+                <span class="fx fx--purple">ConvLSTM</span>
+                <span class="fx fx--teal">Differentiable warping</span>
+                <span class="fx fx--green">PyTorch</span>
+                <span class="fx fx--yellow">Mixed precision</span>
+              </div>
+            </div>
+            <aside class="product__side" aria-label="PM2.5 Forecaster stats">
+              <div class="stat stat--hero">
+                <span class="stat__label">Accuracy</span>
+                <span class="stat__value"><span data-count="89.25" data-decimals="2">89.25</span>%</span>
+                <span class="meter"><span style="--v:.8925"></span></span>
+              </div>
+              <div class="stat"><span class="stat__label">Horizon</span><span class="stat__value">16 h</span></div>
+              <div class="stat"><span class="stat__label">Grid</span><span class="stat__value">140×124</span></div>
+              <div class="stat"><span class="stat__label">Inputs</span><span class="stat__value">15 vars</span></div>
+              <div class="stat"><span class="stat__label">Placement</span><span class="stat__value">1st</span></div>
+              <a class="btn btn--block" href="https://github.com/kartiks15/ANRF_AISEHack_VibeCoders" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>View source</a>
+            </aside>
+          </article>
+
+          <!-- RAG -->
+          <article class="panel product reveal" id="p-rag" data-name="Offline Multimodal RAG" data-kind="Product" data-uses="python rag faiss clip whisper sbert fastapi dash git">
+            <div class="product__top">
+              <div class="product__art app-ico app-ico--purple" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><rect x="11" y="13" width="26" height="32" rx="4" fill="#fff" opacity=".5" transform="rotate(-9 24 29)"/><rect x="17" y="12" width="26" height="33" rx="4" fill="#fff"/><path d="M22.5 20.5h15M22.5 26.5h15M22.5 32.5h9" stroke="#7b48d1" stroke-width="3" stroke-linecap="round"/><circle cx="43" cy="42" r="8" fill="#7b48d1" stroke="#fff" stroke-width="4"/><path d="m49 48 6 6" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="product__titles">
+                <p class="product__meta">Aug – Oct 2025 <span class="pill pill--listed">Listed</span></p>
+                <h3>Offline Multimodal RAG</h3>
+              </div>
+            </div>
+            <p class="product__desc">One query searches text, images and audio, all on your own machine with no cloud APIs. Images and audio share a CLIP embedding space, so a spoken phrase can find a photo.</p>
+            <ul class="stat-list">
+              <li><span>Accuracy</span><b><span data-count="73.87" data-decimals="2">73.87</span>%</b><span class="meter"><span style="--v:.7387"></span></span></li>
+              <li><span>Tested on</span><b>2,000+ docs · 500 audio clips</b></li>
+              <li><span>Cloud API calls</span><b>0</b></li>
+            </ul>
+            <div class="fx-row">
+              <span class="fx-label">Effects</span>
+              <span class="fx fx--green">Offline</span>
+              <span class="fx fx--purple">FAISS</span>
+              <span class="fx fx--blue">CLIP</span>
+              <span class="fx fx--orange">Whisper</span>
+              <span class="fx fx--teal">FastAPI</span>
+              <span class="fx fx--pink">Dash</span>
+            </div>
+            <div class="product__foot">
+              <a class="link-btn" href="https://github.com/kartiks15/Private-RAG" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>Source<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <!-- FloatChat -->
+          <article class="panel product reveal" id="p-floatchat" data-name="FloatChat" data-kind="Product" data-uses="python langchain mcp agents openai postgres sql netcdf dash git">
+            <div class="product__top">
+              <div class="product__art app-ico app-ico--blue" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="M13 13h28a5 5 0 0 1 5 5v13a5 5 0 0 1-5 5H26l-8 6.5V36h-5a5 5 0 0 1-5-5V18a5 5 0 0 1 5-5z" fill="#fff"/><path d="M15 25.5c3-3 5.5-3 8.5 0s5.5 3 8.5 0 5.5-3 8.5 0" fill="none" stroke="#2a78d6" stroke-width="3" stroke-linecap="round"/><rect x="49" y="30" width="7.5" height="17" rx="3.7" fill="#ffd24d"/><path d="M6 53c4-4 8-4 12 0s8 4 12 0 8-4 12 0 8 4 12 0" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="product__titles">
+                <p class="product__meta">Dec 2025 – Feb 2026 <span class="pill pill--listed">Listed</span></p>
+                <h3>FloatChat</h3>
+              </div>
+            </div>
+            <p class="product__desc">Ask questions about Argo ocean floats in plain English. An LLM agent queries PostgreSQL through a custom MCP server. The app maps float tracks and plots T-S diagrams, BGC parameters and depth profiles.</p>
+            <ul class="stat-list">
+              <li><span>Report time</span><b>4× faster</b><span class="meter"><span style="--v:.75"></span></span></li>
+              <li><span>Data</span><b>Argo floats, Indian Ocean</b></li>
+              <li><span>Pipeline</span><b>NetCDF → PostgreSQL</b></li>
+            </ul>
+            <div class="fx-row">
+              <span class="fx-label">Effects</span>
+              <span class="fx fx--purple">LangGraph agent</span>
+              <span class="fx fx--green">MCP</span>
+              <span class="fx fx--blue">PostgreSQL</span>
+              <span class="fx fx--orange">GPT-4o</span>
+              <span class="fx fx--teal">Plotly</span>
+            </div>
+            <div class="product__foot">
+              <a class="link-btn" href="https://github.com/kartiks15/FloatChat" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>Source<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <!-- Koala -->
+          <article class="panel product reveal" id="p-koala" data-name="Koala" data-kind="Product" data-uses="python triton pytorch git">
+            <div class="product__top">
+              <div class="product__art app-ico app-ico--teal" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><circle cx="16" cy="22" r="10" fill="#fff"/><circle cx="48" cy="22" r="10" fill="#fff"/><circle cx="16" cy="22" r="5" fill="#bfeeea"/><circle cx="48" cy="22" r="5" fill="#bfeeea"/><ellipse cx="32" cy="35" rx="17" ry="16" fill="#fff"/><ellipse cx="32" cy="38.5" rx="5.5" ry="7" fill="#24313f"/><circle cx="24.5" cy="31" r="2.4" fill="#24313f"/><circle cx="39.5" cy="31" r="2.4" fill="#24313f"/></svg>
+              </div>
+              <div class="product__titles">
+                <p class="product__meta">Aug 2026 – present <span class="pill pill--dev">In development</span></p>
+                <h3>Koala</h3>
+              </div>
+            </div>
+            <p class="product__desc">A vector search library I'm writing from scratch. A flat in-memory index runs on Triton GPU kernels and falls back to PyTorch on CPU, with a micro-benchmark harness alongside.</p>
+            <ul class="stat-list">
+              <li><span>Index</span><b>Flat (exact) search</b></li>
+              <li><span>Kernels</span><b>Triton, PyTorch fallback</b></li>
+              <li><span>Status</span><b>Early build</b><span class="meter meter--dev"><span style="--v:.35"></span></span></li>
+            </ul>
+            <div class="fx-row">
+              <span class="fx-label">Effects</span>
+              <span class="fx fx--green">Triton</span>
+              <span class="fx fx--orange">PyTorch</span>
+              <span class="fx fx--blue">Nearest-neighbour</span>
+              <span class="fx fx--purple">From scratch</span>
+            </div>
+            <div class="product__foot">
+              <a class="link-btn" href="https://github.com/kartiks15/koala" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>Source<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <!-- Side stash -->
+          <div class="panel stash reveal">
+            <header class="stash__head">
+              <h3>Side stash</h3>
+              <p>Smaller builds and learning projects.</p>
+            </header>
+            <ul class="stash__list">
+              <li class="stash__item" id="s-tickets" data-name="Support ticket automation" data-kind="Side build" data-uses="python hf flask git">
+                <span class="app-ico app-ico--pink" aria-hidden="true"><svg class="ico"><use href="#i-ticket"/></svg></span>
+                <div>
+                  <h4><a href="https://github.com/kartiks15/Customer-Support-Ticket-Automation" target="_blank" rel="noopener">Support ticket automation</a></h4>
+                  <p>Fine-tuned DistilBERT on Banking77 to sort support queries into 77 intents, set a priority, and send low-confidence cases to a human. Served with Flask.</p>
+                  <div class="tags"><span class="tag">DistilBERT</span><span class="tag">Transformers</span><span class="tag">Flask</span></div>
+                </div>
+              </li>
+              <li class="stash__item" id="s-docqa" data-name="Document query system" data-kind="Side build" data-uses="python rag faiss sbert openai fastapi git">
+                <span class="app-ico app-ico--purple" aria-hidden="true"><svg class="ico"><use href="#i-search"/></svg></span>
+                <div>
+                  <h4><a href="https://github.com/kartiks15/Document-Query-System" target="_blank" rel="noopener">Document query system</a></h4>
+                  <p>Question answering over PDF, Word, Excel, PowerPoint and images (with OCR). FAISS retrieval, query routing, a keyword fallback, and GPT-4o answers behind FastAPI.</p>
+                  <div class="tags"><span class="tag">FAISS</span><span class="tag">sentence-transformers</span><span class="tag">FastAPI</span></div>
+                </div>
+              </li>
+              <li class="stash__item" id="s-anomaly" data-name="Market anomaly detection" data-kind="Side build" data-uses="python git">
+                <span class="app-ico app-ico--yellow" aria-hidden="true"><svg class="ico"><use href="#i-trend"/></svg></span>
+                <div>
+                  <h4><a href="https://github.com/kartiks15/Multivariate-Market-Anomaly-Detection" target="_blank" rel="noopener">Market anomaly detection</a></h4>
+                  <p>A three-stage detector for NIFTY indices using rolling z-scores and Mahalanobis distance, aimed at spotting speculative bubbles.</p>
+                  <div class="tags"><span class="tag">Statistics</span><span class="tag">Jupyter</span></div>
+                </div>
+              </li>
+              <li class="stash__item" id="s-gpt2" data-name="GPT-2 from scratch" data-kind="Side build" data-uses="python pytorch git">
+                <span class="app-ico app-ico--blue" aria-hidden="true"><svg class="ico"><use href="#i-layers"/></svg></span>
+                <div>
+                  <h4><a href="https://github.com/kartiks15/gpt2_by_me" target="_blank" rel="noopener">GPT-2 from scratch</a></h4>
+                  <p>A GPT-2-style decoder written by hand in PyTorch: causal multi-head attention, GELU MLPs, a training loop and greedy decoding.</p>
+                  <div class="tags"><span class="tag">PyTorch</span><span class="tag">Transformers</span></div>
+                </div>
+              </li>
+              <li class="stash__item" id="s-cuda" data-name="CUDA scratchpad" data-kind="Side build" data-uses="cuda cpp git">
+                <span class="app-ico app-ico--ink" aria-hidden="true"><svg class="ico"><use href="#i-cpu"/></svg></span>
+                <div>
+                  <h4><a href="https://github.com/kartiks15/tinkering-cuda" target="_blank" rel="noopener">CUDA scratchpad</a></h4>
+                  <p>Where I learn CUDA C++: host and device memory, kernel launches, and the runtime APIs.</p>
+                  <div class="tags"><span class="tag">CUDA C++</span></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LAB / RESEARCH ============ -->
+    <section class="section" id="lab" aria-labelledby="lab-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="app-chip"><span class="app-ico app-ico--blue"><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg></span>Lab</span>
+          <h2 id="lab-title">Lab notes</h2>
+          <p class="sec-head__lede">Can a smaller model cost more energy to run? For 4-bit Mistral-7B, my early numbers say yes.</p>
+        </header>
+
+        <div class="lab-grid">
+          <article class="panel lab-study reveal" id="lab-thesis" data-name="Thesis: FP4 vs NF4" data-kind="Research" data-uses="python quant nvml">
+            <p class="eyebrow">B.Tech thesis · in progress</p>
+            <h3>FP4 vs NF4: what 4-bit quantization costs in energy</h3>
+            <p>With two teammates and advised by Prof. Rajesh Verma, I'm comparing the two 4-bit post-training quantization formats on energy use as well as accuracy.</p>
+            <dl class="spec">
+              <div><dt>Model</dt><dd>Mistral-7B in FP16, FP4 and NF4</dd></div>
+              <div><dt>Hardware</dt><dd>NVIDIA RTX PRO 6000</dd></div>
+              <div><dt>Quality</dt><dd>MMLU, WikiText-2 perplexity, hidden-state similarity to FP16</dd></div>
+              <div><dt>Cost</dt><dd>Throughput, and GPU power from NVML (idle-subtracted, PUE-scaled)</dd></div>
+              <div><dt>Protocol</dt><dd>Five trials in randomized order</dd></div>
+            </dl>
+            <h4 class="mini-head">Findings so far</h4>
+            <ol class="findings">
+              <li>4-bit cuts peak GPU memory from 14.5 GB to about 4.6 GB and raises throughput from 71.1 to about 90 tokens/s.</li>
+              <li><b>It doesn't save energy.</b> A full MMLU run uses about 5% more than FP16: 0.104 kWh (FP4) and 0.105 kWh (NF4) against 0.0994.</li>
+              <li>NF4 beats FP4 on accuracy (0.491 vs 0.487), perplexity and hidden-state similarity, and uses slightly more energy.</li>
+            </ol>
+            <div class="queue">
+              <span class="queue__label">Queued</span>
+              <span class="tag">Phi-3</span><span class="tag">Gemma 3</span><span class="tag">Qwen 2.5 7B</span>
+              <span class="queue__note">Paper in progress</span>
+            </div>
+          </article>
+
+          <figure class="panel chart reveal" aria-labelledby="chart-title">
+            <figcaption class="chart__cap">
+              <h3 id="chart-title">Mistral-7B at three precisions</h3>
+              <p>Preliminary thesis results. Hover or focus a bar for details.</p>
+              <ul class="legend" aria-label="Legend">
+                <li><span class="sw sw--fp16"></span>FP16</li>
+                <li><span class="sw sw--fp4"></span>FP4</li>
+                <li><span class="sw sw--nf4"></span>NF4</li>
+              </ul>
+            </figcaption>
+
+            <div class="chart__grid">
+              <div class="mini">
+                <h4>Peak GPU memory<span>GB · lower is better</span></h4>
+                <div class="bar-row" tabindex="0" data-tip="FP16 · 14.5 GB peak"><span class="bar-row__k">FP16</span><span class="bar-track"><span class="bar bar--fp16" style="--w:90.6%"></span></span><span class="bar-row__v">14.5</span></div>
+                <div class="bar-row" tabindex="0" data-tip="FP4 · ≈4.6 GB peak · −68% vs FP16"><span class="bar-row__k">FP4</span><span class="bar-track"><span class="bar bar--fp4" style="--w:28.75%"></span></span><span class="bar-row__v">≈4.6</span></div>
+                <div class="bar-row" tabindex="0" data-tip="NF4 · ≈4.6 GB peak · −68% vs FP16"><span class="bar-row__k">NF4</span><span class="bar-track"><span class="bar bar--nf4" style="--w:28.75%"></span></span><span class="bar-row__v">≈4.6</span></div>
+                <div class="axis" aria-hidden="true"><span>0</span><span>16</span></div>
+                <p class="mini__delta">4-bit: <b>−68%</b> vs FP16</p>
+              </div>
+
+              <div class="mini">
+                <h4>Throughput<span>tokens/s · higher is better</span></h4>
+                <div class="bar-row" tabindex="0" data-tip="FP16 · 71.1 tokens/s"><span class="bar-row__k">FP16</span><span class="bar-track"><span class="bar bar--fp16" style="--w:71.1%"></span></span><span class="bar-row__v">71.1</span></div>
+                <div class="bar-row" tabindex="0" data-tip="FP4 · ≈90 tokens/s · +27% vs FP16"><span class="bar-row__k">FP4</span><span class="bar-track"><span class="bar bar--fp4" style="--w:90%"></span></span><span class="bar-row__v">≈90</span></div>
+                <div class="bar-row" tabindex="0" data-tip="NF4 · ≈90 tokens/s · +27% vs FP16"><span class="bar-row__k">NF4</span><span class="bar-track"><span class="bar bar--nf4" style="--w:90%"></span></span><span class="bar-row__v">≈90</span></div>
+                <div class="axis" aria-hidden="true"><span>0</span><span>100</span></div>
+                <p class="mini__delta">4-bit: <b>+27%</b> vs FP16</p>
+              </div>
+
+              <div class="mini mini--key">
+                <h4>Energy for a full MMLU run<span>kWh · lower is better</span></h4>
+                <div class="bar-row" tabindex="0" data-tip="FP16 · 0.0994 kWh"><span class="bar-row__k">FP16</span><span class="bar-track"><span class="bar bar--fp16" style="--w:82.8%"></span></span><span class="bar-row__v">0.0994</span></div>
+                <div class="bar-row" tabindex="0" data-tip="FP4 · 0.104 kWh · +4.6% vs FP16"><span class="bar-row__k">FP4</span><span class="bar-track"><span class="bar bar--fp4" style="--w:86.7%"></span></span><span class="bar-row__v">0.104</span></div>
+                <div class="bar-row" tabindex="0" data-tip="NF4 · 0.105 kWh · +5.6% vs FP16"><span class="bar-row__k">NF4</span><span class="bar-track"><span class="bar bar--nf4" style="--w:87.5%"></span></span><span class="bar-row__v">0.105</span></div>
+                <div class="axis" aria-hidden="true"><span>0</span><span>0.12</span></div>
+                <p class="mini__delta">FP4 <b>+4.6%</b> · NF4 <b>+5.6%</b> vs FP16</p>
+              </div>
+
+              <div class="mini">
+                <h4>MMLU accuracy<span>higher is better</span></h4>
+                <div class="bar-row bar-row--na"><span class="bar-row__k">FP16</span><span class="bar-track"></span><span class="bar-row__v">n/a</span></div>
+                <div class="bar-row" tabindex="0" data-tip="FP4 · 0.487 MMLU"><span class="bar-row__k">FP4</span><span class="bar-track"><span class="bar bar--fp4" style="--w:81.2%"></span></span><span class="bar-row__v">0.487</span></div>
+                <div class="bar-row" tabindex="0" data-tip="NF4 · 0.491 MMLU · best 4-bit format"><span class="bar-row__k">NF4</span><span class="bar-track"><span class="bar bar--nf4" style="--w:81.8%"></span></span><span class="bar-row__v">0.491</span></div>
+                <div class="axis" aria-hidden="true"><span>0</span><span>0.6</span></div>
+                <p class="mini__delta">NF4 leads FP4 by <b>0.004</b></p>
+              </div>
+            </div>
+
+            <details class="chart__table">
+              <summary>View as table</summary>
+              <div class="table-scroll">
+                <table>
+                  <thead><tr><th scope="col">Metric</th><th scope="col">FP16</th><th scope="col">FP4</th><th scope="col">NF4</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Peak GPU memory (GB)</th><td>14.5</td><td>≈4.6</td><td>≈4.6</td></tr>
+                    <tr><th scope="row">Throughput (tokens/s)</th><td>71.1</td><td>≈90</td><td>≈90</td></tr>
+                    <tr><th scope="row">Energy, full MMLU (kWh)</th><td>0.0994</td><td>0.104</td><td>0.105</td></tr>
+                    <tr><th scope="row">MMLU accuracy</th><td>n/a</td><td>0.487</td><td>0.491</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+            <p class="chart__note">4-bit memory and throughput are approximate and shared by FP4 and NF4. FP16 MMLU accuracy isn't reported here yet.</p>
+          </figure>
+
+          <article class="panel lab-kernel reveal" id="lab-kernel" data-name="Capstone: Triton matmul kernel" data-kind="Research" data-uses="python triton nvml">
+            <p class="eyebrow">Capstone · in progress</p>
+            <h3>A matmul kernel that draws less power</h3>
+            <p>Matrix multiplication dominates LLM inference cost, so any saving there carries into every model in the thesis. I'm writing my own matmul kernel in Triton aimed at lower GPU power draw, and I'll measure it with the same NVML harness so its numbers compare directly with the thesis results.</p>
+            <p class="related">Related: <a href="#p-koala">Koala</a> (Triton search kernels) · <a href="https://github.com/kartiks15/tinkering-cuda" target="_blank" rel="noopener">CUDA scratchpad</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MIXING STATION / SKILLS ============ -->
+    <section class="section section--alt" id="mixing" aria-labelledby="mixing-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="app-chip"><span class="app-ico app-ico--purple"><svg class="ico" aria-hidden="true"><use href="#i-mix"/></svg></span>Mixing station</span>
+          <h2 id="mixing-title">Mixing station</h2>
+          <p class="sec-head__lede">My inventory. The number on a slot is how many things on this page use it. Put up to three ingredients in the mixer to find the recipes that use them.</p>
+        </header>
+
+        <div class="mix-grid">
+          <div class="panel inventory reveal js-inventory">
+            <div class="inv-group">
+              <h3 class="inv-group__title"><span class="cat-dot cat--lang"></span>Languages &amp; databases</h3>
+              <div class="inv-slots">
+                <button class="ing" type="button" data-skill="python" data-cat="lang" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Py</span><span class="ing__name">Python</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="cpp" data-cat="lang" aria-pressed="false"><span class="ing__tile" aria-hidden="true">C++</span><span class="ing__name">C++</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="cuda" data-cat="lang" aria-pressed="false"><span class="ing__tile" aria-hidden="true">CU</span><span class="ing__name">CUDA C++</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="sql" data-cat="lang" aria-pressed="false"><span class="ing__tile" aria-hidden="true">SQL</span><span class="ing__name">SQL</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="postgres" data-cat="lang" aria-pressed="false"><span class="ing__tile" aria-hidden="true">PG</span><span class="ing__name">PostgreSQL</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="mysql" data-cat="lang" aria-pressed="false"><span class="ing__tile" aria-hidden="true">My</span><span class="ing__name">MySQL · SQL Server</span><span class="ing__qty" aria-hidden="true"></span></button>
+              </div>
+            </div>
+
+            <div class="inv-group">
+              <h3 class="inv-group__title"><span class="cat-dot cat--dl"></span>Deep learning</h3>
+              <div class="inv-slots">
+                <button class="ing" type="button" data-skill="pytorch" data-cat="dl" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Pt</span><span class="ing__name">PyTorch</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="hf" data-cat="dl" aria-pressed="false"><span class="ing__tile" aria-hidden="true">HF</span><span class="ing__name">Transformers</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="tensorflow" data-cat="dl" aria-pressed="false"><span class="ing__tile" aria-hidden="true">TF</span><span class="ing__name">TensorFlow</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="sklearn" data-cat="dl" aria-pressed="false"><span class="ing__tile" aria-hidden="true">sk</span><span class="ing__name">scikit-learn</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="automl" data-cat="dl" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Au</span><span class="ing__name">AutoML</span><span class="ing__qty" aria-hidden="true"></span></button>
+              </div>
+            </div>
+
+            <div class="inv-group">
+              <h3 class="inv-group__title"><span class="cat-dot cat--gpu"></span>GPU &amp; efficiency</h3>
+              <div class="inv-slots">
+                <button class="ing" type="button" data-skill="triton" data-cat="gpu" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Tr</span><span class="ing__name">Triton</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="quant" data-cat="gpu" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Q4</span><span class="ing__name">4-bit quantization</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="nvml" data-cat="gpu" aria-pressed="false"><span class="ing__tile" aria-hidden="true">NV</span><span class="ing__name">NVML power metering</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="amp" data-cat="gpu" aria-pressed="false"><span class="ing__tile" aria-hidden="true">MP</span><span class="ing__name">Mixed precision</span><span class="ing__qty" aria-hidden="true"></span></button>
+              </div>
+            </div>
+
+            <div class="inv-group">
+              <h3 class="inv-group__title"><span class="cat-dot cat--llm"></span>LLMs &amp; retrieval</h3>
+              <div class="inv-slots">
+                <button class="ing" type="button" data-skill="rag" data-cat="llm" aria-pressed="false"><span class="ing__tile" aria-hidden="true">RAG</span><span class="ing__name">RAG pipelines</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="faiss" data-cat="llm" aria-pressed="false"><span class="ing__tile" aria-hidden="true">FS</span><span class="ing__name">FAISS</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="sbert" data-cat="llm" aria-pressed="false"><span class="ing__tile" aria-hidden="true">ST</span><span class="ing__name">sentence-transformers</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="clip" data-cat="llm" aria-pressed="false"><span class="ing__tile" aria-hidden="true">CL</span><span class="ing__name">CLIP</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="whisper" data-cat="llm" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Wh</span><span class="ing__name">Whisper</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="langchain" data-cat="llm" aria-pressed="false"><span class="ing__tile" aria-hidden="true">LC</span><span class="ing__name">LangChain · LangGraph</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="mcp" data-cat="llm" aria-pressed="false"><span class="ing__tile" aria-hidden="true">MCP</span><span class="ing__name">MCP</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="agents" data-cat="llm" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Ag</span><span class="ing__name">Agentic AI</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="openai" data-cat="llm" aria-pressed="false"><span class="ing__tile" aria-hidden="true">OA</span><span class="ing__name">OpenAI API</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="claude" data-cat="llm" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Cl</span><span class="ing__name">Claude API</span><span class="ing__qty" aria-hidden="true"></span></button>
+              </div>
+            </div>
+
+            <div class="inv-group">
+              <h3 class="inv-group__title"><span class="cat-dot cat--data"></span>Data</h3>
+              <div class="inv-slots">
+                <button class="ing" type="button" data-skill="numpy" data-cat="data" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Np</span><span class="ing__name">NumPy</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="pandas" data-cat="data" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Pd</span><span class="ing__name">Pandas</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="scipy" data-cat="data" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Sp</span><span class="ing__name">SciPy</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="netcdf" data-cat="data" aria-pressed="false"><span class="ing__tile" aria-hidden="true">NC</span><span class="ing__name">NetCDF</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="xarray" data-cat="data" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Xr</span><span class="ing__name">xarray</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="excel" data-cat="data" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Xl</span><span class="ing__name">Excel</span><span class="ing__qty" aria-hidden="true"></span></button>
+              </div>
+            </div>
+
+            <div class="inv-group">
+              <h3 class="inv-group__title"><span class="cat-dot cat--app"></span>Apps &amp; APIs</h3>
+              <div class="inv-slots">
+                <button class="ing" type="button" data-skill="fastapi" data-cat="app" aria-pressed="false"><span class="ing__tile" aria-hidden="true">FA</span><span class="ing__name">FastAPI</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="flask" data-cat="app" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Fl</span><span class="ing__name">Flask</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="dash" data-cat="app" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Da</span><span class="ing__name">Dash · Plotly</span><span class="ing__qty" aria-hidden="true"></span></button>
+              </div>
+            </div>
+
+            <div class="inv-group">
+              <h3 class="inv-group__title"><span class="cat-dot cat--ops"></span>Tools, BI &amp; cloud</h3>
+              <div class="inv-slots">
+                <button class="ing" type="button" data-skill="git" data-cat="ops" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Git</span><span class="ing__name">Git</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="linux" data-cat="ops" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Lx</span><span class="ing__name">Linux</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="aws" data-cat="ops" aria-pressed="false"><span class="ing__tile" aria-hidden="true">AWS</span><span class="ing__name">AWS · SageMaker · S3</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="powerbi" data-cat="ops" aria-pressed="false"><span class="ing__tile" aria-hidden="true">BI</span><span class="ing__name">Power BI</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="tableau" data-cat="ops" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Tb</span><span class="ing__name">Tableau</span><span class="ing__qty" aria-hidden="true"></span></button>
+              </div>
+            </div>
+          </div>
+
+          <aside class="panel mixer js-mixer" aria-labelledby="mixer-title">
+            <div class="mixer__head">
+              <h3 id="mixer-title">Mixer</h3>
+              <button class="link-btn link-btn--sm js-mix-clear" type="button" disabled><svg class="ico" aria-hidden="true"><use href="#i-reset"/></svg>Clear</button>
+            </div>
+            <div class="mixer__slots js-mix-slots">
+              <button class="mslot" type="button" disabled aria-label="Empty slot"><span class="mslot__empty" aria-hidden="true">+</span></button>
+              <span class="mixer__plus" aria-hidden="true">+</span>
+              <button class="mslot" type="button" disabled aria-label="Empty slot"><span class="mslot__empty" aria-hidden="true">+</span></button>
+              <span class="mixer__plus" aria-hidden="true">+</span>
+              <button class="mslot" type="button" disabled aria-label="Empty slot"><span class="mslot__empty" aria-hidden="true">+</span></button>
+            </div>
+            <div class="mixer__bar" aria-hidden="true"><span></span></div>
+            <div class="mixer__out js-mix-out" aria-live="polite">
+              <p class="mixer__hint">Pick an ingredient from the inventory to start mixing.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ JOURNAL / EXPERIENCE ============ -->
+    <section class="section" id="journal" aria-labelledby="journal-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="app-chip"><span class="app-ico app-ico--yellow"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg></span>Journal</span>
+          <h2 id="journal-title">Journal</h2>
+          <p class="sec-head__lede">Quests so far: school, work, and the one I'm looking for next.</p>
+        </header>
+
+        <div class="journal">
+          <article class="panel quest quest--available reveal">
+            <header class="quest__head">
+              <span class="qstatus qstatus--available"><span aria-hidden="true">!</span> Available</span>
+              <span class="quest__when">Dec 2026 – May 2027</span>
+            </header>
+            <h3>Research internship</h3>
+            <p class="quest__giver"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg>Quest giver: you?</p>
+            <p class="quest__text">I'm looking for a six-month research internship in my final semester. My ideal problem: take a compressed small open model, make it cheaper to run, and measure the result carefully enough to publish.</p>
+            <a class="btn btn--primary" href="mailto:hypertex.work@gmail.com?subject=Research%20internship"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>Offer this quest</a>
+          </article>
+
+          <article class="panel quest reveal">
+            <header class="quest__head">
+              <span class="qstatus qstatus--active">Active</span>
+              <span class="quest__when">Jul 2023 – Sep 2027</span>
+            </header>
+            <h3>B.Tech, AI &amp; Machine Learning</h3>
+            <p class="quest__giver"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg>SVKM's NMIMS MPSTME, Mumbai</p>
+            <ul class="objs">
+              <li class="obj obj--prog"><span class="obj__box" aria-hidden="true"></span><span>Thesis: energy and accuracy of FP4 vs NF4 quantization <span class="sr-only">(in progress)</span></span></li>
+              <li class="obj obj--prog"><span class="obj__box" aria-hidden="true"></span><span>Capstone: a Triton matmul kernel for lower GPU power <span class="sr-only">(in progress)</span></span></li>
+              <li class="obj obj--todo"><span class="obj__box" aria-hidden="true"></span><span>Graduate <span class="sr-only">(not started)</span></span></li>
+            </ul>
+          </article>
+
+          <article class="panel quest reveal" id="q-intern" data-name="Data Analysis Intern, Bhilwara Hulchul" data-kind="Work" data-uses="python sql excel">
+            <header class="quest__head">
+              <span class="qstatus qstatus--done"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Completed</span>
+              <span class="quest__when">May – Aug 2026</span>
+            </header>
+            <h3>Data Analysis Intern</h3>
+            <p class="quest__giver"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Bhilwara Hulchul</p>
+            <ul class="objs">
+              <li class="obj obj--done"><span class="obj__box" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span><span>Analysed app-based news consumption data for engagement trends, content performance and readership patterns</span></li>
+              <li class="obj obj--done"><span class="obj__box" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span><span>Cleaned and processed datasets with SQL, Python and Excel</span></li>
+              <li class="obj obj--done"><span class="obj__box" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span><span>Built reports and visualizations that tracked key metrics for the team</span></li>
+            </ul>
+          </article>
+
+          <article class="panel quest reveal">
+            <header class="quest__head">
+              <span class="qstatus qstatus--active">Active</span>
+              <span class="quest__when">Oct 2025 – present</span>
+            </header>
+            <h3>Member &amp; volunteer</h3>
+            <p class="quest__giver"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg>ACM Student Chapter, NMIMS Mumbai</p>
+            <ul class="objs">
+              <li class="obj obj--done"><span class="obj__box" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span><span>Joined the chapter</span></li>
+              <li class="obj obj--prog"><span class="obj__box" aria-hidden="true"></span><span>Volunteer at chapter events <span class="sr-only">(ongoing)</span></span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section class="section section--alt" id="trophies" aria-labelledby="trophies-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="app-chip"><span class="app-ico app-ico--pink"><svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg></span>Trophies</span>
+          <h2 id="trophies-title">Achievements</h2>
+        </header>
+
+        <div class="ach-grid">
+          <article class="panel ach ach--gold reveal">
+            <span class="ach__ico" aria-hidden="true"><svg class="ico"><use href="#i-trophy"/></svg></span>
+            <div>
+              <h3>First place</h3>
+              <p>ANRF AISEHack 2026, Theme 2: pollution forecasting</p>
+              <span class="ach__date">Unlocked · Apr 2026</span>
+            </div>
+          </article>
+          <article class="panel ach ach--silver reveal">
+            <span class="ach__ico" aria-hidden="true"><svg class="ico"><use href="#i-trophy"/></svg></span>
+            <div>
+              <h3>Runner-up</h3>
+              <p>Yugantar 2025, Smart India Hackathon internal round</p>
+              <span class="ach__date">Unlocked · Oct 2025</span>
+            </div>
+          </article>
+        </div>
+
+        <h3 class="mini-head mini-head--spaced reveal">Certifications</h3>
+        <div class="cert-grid">
+          <div class="panel cert reveal"><span class="app-ico app-ico--blue" aria-hidden="true"><svg class="ico"><use href="#i-cert"/></svg></span><div><b>Machine Learning with Python Programming</b><small>NPTEL</small></div></div>
+          <div class="panel cert reveal"><span class="app-ico app-ico--orange" aria-hidden="true"><svg class="ico"><use href="#i-cert"/></svg></span><div><b>Deep Learning</b><small>IIT Ropar · NPTEL</small></div></div>
+          <div class="panel cert reveal"><span class="app-ico app-ico--green" aria-hidden="true"><svg class="ico"><use href="#i-cert"/></svg></span><div><b>Data Analytics</b><small>Google</small></div></div>
+          <div class="panel cert reveal"><span class="app-ico app-ico--yellow" aria-hidden="true"><svg class="ico"><use href="#i-cert"/></svg></span><div><b>AWS Builder Essentials</b><small>AWS</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTS ============ -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="app-chip"><span class="app-ico app-ico--teal"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg></span>Contacts</span>
+          <h2 id="contact-title">Send me a message</h2>
+        </header>
+
+        <div class="contact-grid">
+          <div class="panel contact-card reveal">
+            <p class="contact-card__lede">Email is the fastest way to reach me. I'm in Mumbai on IST (UTC+5:30), where it's <b class="js-ist">—</b> right now.</p>
+            <div class="email-row">
+              <a class="email" href="mailto:hypertex.work@gmail.com">hypertex.work@gmail.com</a>
+              <button class="link-btn link-btn--sm js-copy" type="button" data-copy="hypertex.work@gmail.com"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg>Copy</button>
+            </div>
+            <a class="btn btn--primary btn--lg" href="mailto:hypertex.work@gmail.com?subject=Hi%20Kartik"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>Send a message</a>
+          </div>
+
+          <ul class="contact-list">
+            <li class="reveal"><a class="panel contact-row" href="https://github.com/kartiks15" target="_blank" rel="noopener"><span class="app-ico app-ico--ink" aria-hidden="true"><svg class="ico"><use href="#i-github"/></svg></span><span><b>GitHub</b><small>@kartiks15</small></span><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+            <li class="reveal"><a class="panel contact-row" href="https://www.linkedin.com/in/kartiksoni1/" target="_blank" rel="noopener"><span class="app-ico app-ico--blue" aria-hidden="true"><svg class="ico"><use href="#i-linkedin"/></svg></span><span><b>LinkedIn</b><small>in/kartiksoni1</small></span><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+            <li class="reveal"><a class="panel contact-row" href="docs/Kartik_Resume.pdf" target="_blank" rel="noopener"><span class="app-ico app-ico--red" aria-hidden="true"><svg class="ico"><use href="#i-file"/></svg></span><span><b>Resume</b><small>PDF</small></span><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+            <li class="reveal"><a class="panel contact-row" href="docs/Research%20Associate%20Statement.pdf" target="_blank" rel="noopener"><span class="app-ico app-ico--purple" aria-hidden="true"><svg class="ico"><use href="#i-flask"/></svg></span><span><b>Research statement</b><small>PDF</small></span><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap site-foot__inner">
+      <p>© 2026 Kartik Soni · Last updated October 2026</p>
+      <p>Visual style is a fan tribute to <i>Schedule I</i> by TVGS. Not affiliated.</p>
+    </div>
+  </footer>
+
+  <!-- Phone (navigation) -->
+  <dialog class="phone-dialog" id="phone-dialog" aria-labelledby="phone-title">
+    <div class="phone phone--home">
+      <div class="phone__notch" aria-hidden="true"></div>
+      <div class="phone__screen home">
+        <div class="phone__status" aria-hidden="true">
+          <span class="js-phone-time">12:00</span>
+          <svg viewBox="0 0 54 12" width="54" height="12"><g fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="6" width="3" height="6" rx="1"/><rect x="9" y="3.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="1" width="3" height="11" rx="1"/></g><path d="M22 5.2a8 8 0 0 1 10 0M24 7.6a4.6 4.6 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="27" cy="10" r="1.3" fill="currentColor"/><rect x="36.5" y="1.5" width="15" height="9" rx="2.5" fill="none" stroke="currentColor" stroke-opacity=".5"/><rect x="38.2" y="3.2" width="9" height="5.6" rx="1.2" fill="currentColor"/><rect x="52.5" y="4.5" width="1.5" height="3" rx=".6" fill="currentColor" fill-opacity=".5"/></svg>
+        </div>
+        <div class="home__clock">
+          <span class="home__time js-home-time">12:00</span>
+          <span class="home__date js-home-date">Today</span>
+        </div>
+        <h2 class="sr-only" id="phone-title">Phone: jump to a section</h2>
+        <nav class="home__apps" aria-label="Apps">
+          <a class="app" href="#about"><span class="app__ico app-ico app-ico--green"><svg class="ico" aria-hidden="true"><use href="#i-msg"/></svg><span class="app__badge" aria-hidden="true">1</span></span><span class="app__label">Messages</span></a>
+          <a class="app" href="#products"><span class="app__ico app-ico app-ico--orange"><svg class="ico" aria-hidden="true"><use href="#i-box"/></svg></span><span class="app__label">Products</span></a>
+          <a class="app" href="#lab"><span class="app__ico app-ico app-ico--blue"><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg></span><span class="app__label">Lab</span></a>
+          <a class="app" href="#mixing"><span class="app__ico app-ico app-ico--purple"><svg class="ico" aria-hidden="true"><use href="#i-mix"/></svg></span><span class="app__label">Mixing</span></a>
+          <a class="app" href="#journal"><span class="app__ico app-ico app-ico--yellow"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg></span><span class="app__label">Journal</span></a>
+          <a class="app" href="#trophies"><span class="app__ico app-ico app-ico--pink"><svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg></span><span class="app__label">Trophies</span></a>
+          <a class="app" href="#contact"><span class="app__ico app-ico app-ico--teal"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg></span><span class="app__label">Contacts</span></a>
+          <a class="app" href="docs/Kartik_Resume.pdf" target="_blank" rel="noopener"><span class="app__ico app-ico app-ico--red"><svg class="ico" aria-hidden="true"><use href="#i-file"/></svg></span><span class="app__label">Resume</span></a>
+          <a class="app" href="https://github.com/kartiks15" target="_blank" rel="noopener"><span class="app__ico app-ico app-ico--ink"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg></span><span class="app__label">GitHub</span></a>
+        </nav>
+        <button class="home__bar js-close-phone" type="button" aria-label="Close phone"><span></span></button>
+      </div>
+      <button class="phone__close js-close-phone" type="button" aria-label="Close phone"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+  </dialog>
+</body>
+</html>
