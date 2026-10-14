@@ -204,7 +204,7 @@
     <section class="section section--alt" id="products" aria-labelledby="products-title">
       <div class="wrap">
         <header class="sec-head reveal">
-          <span class="app-chip"><span class="app-ico app-ico--orange"><svg class="ico" aria-hidden="true"><use href="#i-box"/></svg></span>Products<span class="app-chip__badge">4</span></span>
+          <span class="app-chip"><span class="app-ico app-ico--orange"><svg class="ico" aria-hidden="true"><use href="#i-box"/></svg></span>Products<span class="app-chip__badge">5</span></span>
           <h2 id="products-title">Products</h2>
           <p class="sec-head__lede">Things I've built. Each one lists its effects (the stack) and the numbers it hit.</p>
         </header>
@@ -252,6 +252,40 @@
               <div class="stat"><span class="stat__label">Placement</span><span class="stat__value">1st</span></div>
               <a class="btn btn--block" href="https://github.com/kartiks15/ANRF_AISEHack_VibeCoders" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>View source</a>
             </aside>
+          </article>
+
+          <!-- MediCare HMS -->
+          <article class="panel product reveal" id="p-hms" data-name="MediCare HMS" data-kind="Product" data-uses="python postgres sql plpgsql streamlit dash pytest git">
+            <div class="product__top">
+              <div class="product__art app-ico app-ico--red" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><rect x="14" y="7" width="36" height="38" rx="7" fill="#fff"/><path d="M28 15h8v7h7v8h-7v7h-8v-7h-7v-8h7z" fill="#d23e34"/><path d="M5 54h15l4-6 5 10 5-9 4 5h21" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="product__titles">
+                <p class="product__meta">2026</p>
+                <h3>MediCare HMS</h3>
+              </div>
+            </div>
+            <p class="product__desc">A hospital management system for six roles, from receptionist to pharmacist. The rules live in PostgreSQL itself: each signed-in user's queries run as their own database role, so grants, row-level security and triggers decide what they can see and do.</p>
+            <ol class="journey" aria-label="Patient journey">
+              <li><span>Register</span></li><li><span>Diagnose</span></li><li><span>Lab</span></li><li><span>Pharmacy</span></li><li><span>Bill</span></li>
+            </ol>
+            <ul class="stat-list">
+              <li><span>Roles</span><b>6, each a PostgreSQL role</b></li>
+              <li><span>Access control</span><b>RBAC + row-level security</b></li>
+              <li><span>Concurrency</span><b>Row locks on payments &amp; dispensing</b></li>
+            </ul>
+            <div class="fx-row">
+              <span class="fx-label">Effects</span>
+              <span class="fx fx--blue">PostgreSQL</span>
+              <span class="fx fx--purple">PL/pgSQL</span>
+              <span class="fx fx--green">Row-level security</span>
+              <span class="fx fx--orange">Triggers</span>
+              <span class="fx fx--pink">Streamlit</span>
+              <span class="fx fx--teal">pytest</span>
+            </div>
+            <div class="product__foot">
+              <a class="link-btn" href="https://github.com/kartiks15/hospital-mangement-system" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>Source<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
           </article>
 
           <!-- RAG -->
@@ -316,7 +350,7 @@
           </article>
 
           <!-- Koala -->
-          <article class="panel product reveal" id="p-koala" data-name="Koala" data-kind="Product" data-uses="python triton pytorch git">
+          <article class="panel product reveal" id="p-koala" data-name="Koala" data-kind="Product" data-uses="python triton pytorch pytest git">
             <div class="product__top">
               <div class="product__art app-ico app-ico--teal" aria-hidden="true">
                 <svg viewBox="0 0 64 64"><circle cx="16" cy="22" r="10" fill="#fff"/><circle cx="48" cy="22" r="10" fill="#fff"/><circle cx="16" cy="22" r="5" fill="#bfeeea"/><circle cx="48" cy="22" r="5" fill="#bfeeea"/><ellipse cx="32" cy="35" rx="17" ry="16" fill="#fff"/><ellipse cx="32" cy="38.5" rx="5.5" ry="7" fill="#24313f"/><circle cx="24.5" cy="31" r="2.4" fill="#24313f"/><circle cx="39.5" cy="31" r="2.4" fill="#24313f"/></svg>
@@ -526,6 +560,7 @@
                 <button class="ing" type="button" data-skill="cuda" data-cat="lang" aria-pressed="false"><span class="ing__tile" aria-hidden="true">CU</span><span class="ing__name">CUDA C++</span><span class="ing__qty" aria-hidden="true"></span></button>
                 <button class="ing" type="button" data-skill="sql" data-cat="lang" aria-pressed="false"><span class="ing__tile" aria-hidden="true">SQL</span><span class="ing__name">SQL</span><span class="ing__qty" aria-hidden="true"></span></button>
                 <button class="ing" type="button" data-skill="postgres" data-cat="lang" aria-pressed="false"><span class="ing__tile" aria-hidden="true">PG</span><span class="ing__name">PostgreSQL</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="plpgsql" data-cat="lang" aria-pressed="false"><span class="ing__tile" aria-hidden="true">PL</span><span class="ing__name">PL/pgSQL</span><span class="ing__qty" aria-hidden="true"></span></button>
                 <button class="ing" type="button" data-skill="mysql" data-cat="lang" aria-pressed="false"><span class="ing__tile" aria-hidden="true">My</span><span class="ing__name">MySQL · SQL Server</span><span class="ing__qty" aria-hidden="true"></span></button>
               </div>
             </div>
@@ -585,6 +620,7 @@
                 <button class="ing" type="button" data-skill="fastapi" data-cat="app" aria-pressed="false"><span class="ing__tile" aria-hidden="true">FA</span><span class="ing__name">FastAPI</span><span class="ing__qty" aria-hidden="true"></span></button>
                 <button class="ing" type="button" data-skill="flask" data-cat="app" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Fl</span><span class="ing__name">Flask</span><span class="ing__qty" aria-hidden="true"></span></button>
                 <button class="ing" type="button" data-skill="dash" data-cat="app" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Da</span><span class="ing__name">Dash · Plotly</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="streamlit" data-cat="app" aria-pressed="false"><span class="ing__tile" aria-hidden="true">St</span><span class="ing__name">Streamlit</span><span class="ing__qty" aria-hidden="true"></span></button>
               </div>
             </div>
 
@@ -592,6 +628,7 @@
               <h3 class="inv-group__title"><span class="cat-dot cat--ops"></span>Tools, BI &amp; cloud</h3>
               <div class="inv-slots">
                 <button class="ing" type="button" data-skill="git" data-cat="ops" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Git</span><span class="ing__name">Git</span><span class="ing__qty" aria-hidden="true"></span></button>
+                <button class="ing" type="button" data-skill="pytest" data-cat="ops" aria-pressed="false"><span class="ing__tile" aria-hidden="true">pyt</span><span class="ing__name">pytest</span><span class="ing__qty" aria-hidden="true"></span></button>
                 <button class="ing" type="button" data-skill="linux" data-cat="ops" aria-pressed="false"><span class="ing__tile" aria-hidden="true">Lx</span><span class="ing__name">Linux</span><span class="ing__qty" aria-hidden="true"></span></button>
                 <button class="ing" type="button" data-skill="aws" data-cat="ops" aria-pressed="false"><span class="ing__tile" aria-hidden="true">AWS</span><span class="ing__name">AWS · SageMaker · S3</span><span class="ing__qty" aria-hidden="true"></span></button>
                 <button class="ing" type="button" data-skill="powerbi" data-cat="ops" aria-pressed="false"><span class="ing__tile" aria-hidden="true">BI</span><span class="ing__name">Power BI</span><span class="ing__qty" aria-hidden="true"></span></button>
@@ -650,6 +687,7 @@
             <h3>B.Tech, AI &amp; Machine Learning</h3>
             <p class="quest__giver"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg>SVKM's NMIMS MPSTME, Mumbai</p>
             <ul class="objs">
+              <li class="obj obj--done"><span class="obj__box" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span><span>Advanced DBMS project: <a href="#p-hms">MediCare HMS</a></span></li>
               <li class="obj obj--prog"><span class="obj__box" aria-hidden="true"></span><span>Thesis: energy and accuracy of FP4 vs NF4 quantization <span class="sr-only">(in progress)</span></span></li>
               <li class="obj obj--prog"><span class="obj__box" aria-hidden="true"></span><span>Capstone: a Triton matmul kernel for lower GPU power <span class="sr-only">(in progress)</span></span></li>
               <li class="obj obj--todo"><span class="obj__box" aria-hidden="true"></span><span>Graduate <span class="sr-only">(not started)</span></span></li>

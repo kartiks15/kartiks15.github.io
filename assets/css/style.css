@@ -1120,10 +1120,9 @@ button { font: inherit; color: inherit; }
 .now-list b { display: block; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 
 /* ---------- Products ---------- */
-.products {
-  display: grid;
-  gap: 22px;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+.products { display: grid; gap: 22px; }
+@media (min-width: 760px) {
+  .products { grid-template-columns: 1fr 1fr; }
 }
 .product {
   display: flex;
@@ -1263,6 +1262,32 @@ button { font: inherit; color: inherit; }
     transform: translateY(-50%) rotate(-45deg);
   }
 }
+
+/* patient journey strip (MediCare HMS) */
+.journey {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 4px;
+}
+.journey li { display: inline-flex; align-items: center; }
+.journey span {
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1.5px dashed var(--line-strong);
+  background: var(--panel-2);
+  font-size: 13px;
+  font-weight: 600;
+}
+.journey li:not(:last-child)::after {
+  content: "→";
+  margin-left: 4px;
+  color: var(--muted);
+}
+.journey li:last-child span { border-style: solid; border-color: var(--accent); background: var(--accent-bg); }
+
+.obj a { font-weight: 600; text-underline-offset: 3px; }
 
 /* side stash */
 .stash { grid-column: 1 / -1; padding: clamp(20px, 3vw, 28px); }
