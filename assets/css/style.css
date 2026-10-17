@@ -240,6 +240,10 @@ svg { display: block; }
 }
 .link:hover { color: var(--accent); }
 .link .ico--sm { color: var(--muted); }
+.link--accent { color: var(--accent); }
+.link--accent:hover { color: var(--accent-hover); }
+.link--accent .ico--sm { color: inherit; }
+.project__links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; }
 
 .points { display: grid; gap: 6px; }
 .points li {
