@@ -6,26 +6,26 @@
   <title>Kartik Soni · AI/ML Engineer</title>
   <meta name="description" content="Kartik Soni, final-year B.Tech AI & ML student at NMIMS Mumbai, working on inference efficiency: 4-bit quantization, GPU kernels and retrieval systems.">
   <meta name="author" content="Kartik Soni">
-  <meta name="theme-color" content="#f8f8f5">
+  <meta name="theme-color" content="#131312">
   <link rel="canonical" href="https://kartiks15.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kartiks15.github.io/">
   <meta property="og:title" content="Kartik Soni · AI/ML Engineer">
   <meta property="og:description" content="Inference efficiency, 4-bit quantization, GPU kernels and retrieval systems. Final-year B.Tech, NMIMS Mumbai.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d6b47'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-weight='700' font-size='26' text-anchor='middle' fill='%23fff'%3EKS%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131312'/%3E%3Ctext x='32' y='42' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='26' text-anchor='middle' fill='%237fd4a1'%3EKS%3C/text%3E%3C/svg%3E">
   <script>
     (function () {
       var d = document.documentElement, t = null;
       try { t = localStorage.getItem('ks-theme'); } catch (e) {}
-      if (t !== 'light' && t !== 'dark') t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      d.setAttribute('data-theme', t);
+      d.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+      d.classList.add('js');
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
-  <link rel="stylesheet" href="assets/css/style.css?v=2026-10-18">
-  <script src="assets/js/main.js?v=2026-10-17" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css?v=2026-11-23c">
+  <script src="assets/js/main.js?v=2026-11-23c" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -36,491 +36,292 @@
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
     <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8.5 7H17v8.5"/></symbol>
-    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="12" height="12" rx="2"/><path d="M15.5 8.5V5a1.5 1.5 0 0 0-1.5-1.5H5A1.5 1.5 0 0 0 3.5 5v9A1.5 1.5 0 0 0 5 15.5h3.5"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M19.5 14.6A8 8 0 1 1 9.4 4.5a6.4 6.4 0 0 0 10.1 10.1z"/></symbol>
-    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
-    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M9 13.8 8 21l4-2 4 2-1-7.2"/></symbol>
-    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol>
   </svg>
 
-  <!-- Navigation -->
-  <header class="nav" id="nav">
-    <div class="wrap nav__inner">
-      <a class="nav__brand" href="#top">Kartik Soni</a>
-      <nav class="nav__links" id="nav-links" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="nav__actions">
-        <a class="btn btn--sm nav__resume" href="docs/Kartik_Resume.pdf" target="_blank" rel="noopener">Resume</a>
-        <button class="icon-btn js-theme" type="button" aria-label="Switch theme">
+  <main id="main" class="page">
+    <header class="intro">
+      <div class="intro__top">
+        <h1>Kartik Soni</h1>
+        <button class="theme js-theme" type="button" aria-label="Switch theme">
           <svg class="ico ico--sun" aria-hidden="true"><use href="#i-sun"/></svg>
           <svg class="ico ico--moon" aria-hidden="true"><use href="#i-moon"/></svg>
         </button>
-        <button class="icon-btn nav__toggle js-menu" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
-          <svg class="ico ico--menu" aria-hidden="true"><use href="#i-menu"/></svg>
-          <svg class="ico ico--close" aria-hidden="true"><use href="#i-x"/></svg>
-        </button>
       </div>
-    </div>
-  </header>
+      <p class="intro__pitch">I make machine learning models cheaper to run: 4-bit quantization, GPU kernels and retrieval systems.</p>
+      <p class="intro__meta">B.Tech AI &amp; ML, NMIMS MPSTME · Class of 2027 · Mumbai, India</p>
+      <p class="intro__status">Open to research internships, Dec 2026 – May 2027</p>
 
-  <main id="main">
+      <nav aria-label="Contact links">
+      <ul class="buttons">
+        <li><a class="button button--primary" href="mailto:hypertex.work@gmail.com"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>hypertex.work@gmail.com</a></li>
+        <li><a class="button" href="https://github.com/kartiks15" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></li>
+        <li><a class="button" href="https://www.linkedin.com/in/kartiksoni1/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
+        <li><a class="button" href="docs/Kartik_Resume.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-file"/></svg>Resume (PDF)</a></li>
+      </ul>
+      </nav>
 
-    <!-- Hero -->
-    <section class="hero" id="top" aria-labelledby="hero-name">
-      <div class="wrap hero__grid">
-        <div class="hero__text">
-          <p class="eyebrow">AI/ML engineer · Mumbai, India</p>
-          <h1 id="hero-name">Kartik Soni</h1>
-          <p class="hero__lede">I work on making machine learning models cheaper to run: 4-bit quantization, GPU kernels and retrieval systems. Final-year B.Tech in AI &amp; ML at NMIMS, Mumbai.</p>
-          <p class="status"><span class="status__dot" aria-hidden="true"></span>Open to research internships, Dec 2026 – May 2027</p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="mailto:hypertex.work@gmail.com"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>Email me</a>
-            <a class="btn" href="docs/Kartik_Resume.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-file"/></svg>Resume (PDF)</a>
-            <a class="icon-link" href="https://github.com/kartiks15" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg></a>
-            <a class="icon-link" href="https://www.linkedin.com/in/kartiksoni1/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+      <ul class="stats" aria-label="Highlights">
+        <li><b>1st</b> ANRF AISEHack 2026</li>
+        <li><b>Finalist</b> LYB Mumbai Hackathon 2026</li>
+        <li><b>2nd</b> Yugantar 2025</li>
+        <li><b>Half</b> the energy per token at 4 bits</li>
+      </ul>
+    </header>
+
+    <section class="row" id="about" aria-labelledby="about-h">
+      <h2 class="row__label" id="about-h">About</h2>
+      <div class="row__body prose">
+        <p>I'm a final-year B.Tech student in Artificial Intelligence and Machine Learning at SVKM's NMIMS MPSTME, Mumbai. I like the parts of machine learning that sit inside the model and close to the hardware: what an LLM actually computes, where inference time, memory and energy go, and how to run a good model on modest infrastructure.</p>
+        <p>For my capstone I measured what 4-bit quantization really costs in energy across five open LLMs, using Triton kernels I wrote. At hackathons I've built a physics-informed PM2.5 forecaster that took 1st place at ANRF AISEHack 2026, a near-miss reporting app that reached the LYB Mumbai Hackathon finals, and a satellite flood-damage mapper. In summer 2026 I interned as a data analyst at Bhilwara Halchal.</p>
+        <dl class="focus">
+          <div><dt>Inference efficiency</dt><dd>Quantization formats, throughput, and measuring energy as well as accuracy.</dd></div>
+          <div><dt>GPU kernels</dt><dd>Triton and CUDA C++: 4-bit matrix–vector and dequantization kernels for LLM inference.</dd></div>
+          <div><dt>Retrieval systems</dt><dd>Vector search, multimodal embeddings and RAG pipelines that run offline.</dd></div>
+          <div><dt>Scientific ML</dt><dd>Physics-informed and satellite-based models for air quality and floods.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="row" id="research" aria-labelledby="research-h">
+      <h2 class="row__label" id="research-h">Research</h2>
+      <div class="row__body">
+        <article class="entry entry--lead" id="capstone">
+          <div class="entry__head">
+            <h3>How green is compression? The energy cost of 4-bit LLMs</h3>
+            <p class="entry__date">Oct 2026</p>
           </div>
-        </div>
-
-        <aside class="card now" aria-labelledby="now-title">
-          <h2 class="label" id="now-title">Currently</h2>
-          <ul class="now__list">
-            <li><span class="now__k">Thesis</span><span>Energy and accuracy of FP4 vs NF4 quantization on Mistral-7B</span></li>
-            <li><span class="now__k">Capstone</span><span>A Triton matmul kernel aimed at lower GPU power draw</span></li>
-            <li><span class="now__k">Building</span><span>Koala, a vector search library with Triton kernels</span></li>
+          <p class="entry__meta">B.Tech capstone · team of three, mentored by Prof. Rajesh Verma</p>
+          <p>4-bit quantization makes language models cheaper to deploy, and it is often assumed to make them greener too. We measured it. On an NVIDIA RTX PRO 6000 Blackwell GPU we compared three 4-bit formats with the 16-bit baseline in five open models: FP4 and NF4 weight-only quantization, run by Triton kernels we wrote, and NVIDIA's native NVFP4, which does the arithmetic itself in 4 bits on the GPU's FP4 tensor cores.</p>
+          <p>Models: Mistral-7B, Llama-3.1-8B, Qwen2.5-7B, Phi-3-mini and Gemma-3-4B, scored on all 14,042 MMLU questions and WikiText-2 perplexity. Energy came from the GPU's own counter with the idle floor removed, repeated in Williams-ordered cycles with 95% intervals, and accuracy differences were checked with Holm-corrected McNemar tests.</p>
+          <ul class="findings">
+            <li>Generating text, every 4-bit format cut energy per token to <b>44–57%</b> of the 16-bit baseline in all five models, mostly by drawing less power (340 W down to 190 W on Mistral-7B).</li>
+            <li><b>Batched work is different.</b> FP4 and NF4 used 3–8% more energy than the baseline over a full MMLU run. Only NVFP4, whose arithmetic runs in 4 bits, saved energy there: 50–53% of the baseline, 71% on Gemma-3-4B.</li>
+            <li>NF4 is the better weight-only format: about 12% less weight error than FP4, and never significantly less accurate.</li>
+            <li>The cheapest format isn't always safe. NVFP4 lost 2.7 points on Qwen2.5-7B and 4.7 on Phi-3-mini against the best weight-only format. Energy effects held in every model; accuracy effects did not.</li>
           </ul>
-          <p class="now__foot">Previously: data analysis intern at Bhilwara Halchal, summer 2026</p>
-        </aside>
+        </article>
       </div>
 
-      <div class="wrap">
-        <ul class="highlights" aria-label="Highlights">
-          <li><span class="hl__value">1st place</span><span class="hl__label">ANRF AISEHack 2026, pollution forecasting</span></li>
-          <li><span class="hl__value">−68% memory</span><span class="hl__label">4-bit Mistral-7B vs FP16, at about 5% more energy</span></li>
-          <li><span class="hl__value">73.87%</span><span class="hl__label">Recall@10 for offline search across text, images and audio</span></li>
-          <li><span class="hl__value">Days → hours</span><span class="hl__label">Ocean-data reports with FloatChat</span></li>
+      <figure class="chart row__wide" aria-labelledby="chart-title">
+        <figcaption class="chart__cap">
+          <p class="chart__title" id="chart-title">Five LLMs at 4 bits, against their own 16-bit baseline</p>
+          <ul class="legend" aria-label="Legend">
+            <li><span class="sw sw--fp4"></span>FP4</li>
+            <li><span class="sw sw--nf4"></span>NF4</li>
+            <li><span class="sw sw--nvfp4"></span>NVFP4</li>
+          </ul>
+        </figcaption>
+        <div class="chart__grid">
+        <div class="panel">
+          <h4>Generating text<span>energy per token, % of 16-bit</span></h4>
+          <div class="gplot" style="--ref:0.8333"><div class="grow" tabindex="0" data-tip="Mistral-7B · energy per token: FP4 44%, NF4 45%, NVFP4 44% of 16-bit"><span class="grow__k">Mistral-7B</span><span class="grow__bars"><span class="gbar gbar--fp4" style="width:36.67%"></span><span class="gbar gbar--nf4" style="width:37.5%"></span><span class="gbar gbar--nvfp4" style="width:36.67%"></span></span></div><div class="grow" tabindex="0" data-tip="Llama-3.1-8B · energy per token: FP4 47%, NF4 48%, NVFP4 49% of 16-bit"><span class="grow__k">Llama-3.1-8B</span><span class="grow__bars"><span class="gbar gbar--fp4" style="width:39.17%"></span><span class="gbar gbar--nf4" style="width:40%"></span><span class="gbar gbar--nvfp4" style="width:40.83%"></span></span></div><div class="grow" tabindex="0" data-tip="Qwen2.5-7B · energy per token: FP4 49%, NF4 49%, NVFP4 49% of 16-bit"><span class="grow__k">Qwen2.5-7B</span><span class="grow__bars"><span class="gbar gbar--fp4" style="width:40.83%"></span><span class="gbar gbar--nf4" style="width:40.83%"></span><span class="gbar gbar--nvfp4" style="width:40.83%"></span></span></div><div class="grow" tabindex="0" data-tip="Phi-3-mini · energy per token: FP4 47%, NF4 47%, NVFP4 47% of 16-bit"><span class="grow__k">Phi-3-mini</span><span class="grow__bars"><span class="gbar gbar--fp4" style="width:39.17%"></span><span class="gbar gbar--nf4" style="width:39.17%"></span><span class="gbar gbar--nvfp4" style="width:39.17%"></span></span></div><div class="grow" tabindex="0" data-tip="Gemma-3-4B · energy per token: FP4 55%, NF4 56%, NVFP4 55% of 16-bit"><span class="grow__k">Gemma-3-4B</span><span class="grow__bars"><span class="gbar gbar--fp4" style="width:45.83%"></span><span class="gbar gbar--nf4" style="width:46.67%"></span><span class="gbar gbar--nvfp4" style="width:45.83%"></span></span></div></div>
+          <div class="gaxis" aria-hidden="true"><span style="left:0%">0%</span><span style="left:41.67%">50%</span><span style="left:83.33%">100%</span></div>
+          <p class="panel__note">All formats: 44–57% of 16-bit</p>
+        </div>
+        <div class="panel">
+          <h4>Batched scoring<span>full-MMLU energy, % of 16-bit</span></h4>
+          <div class="gplot" style="--ref:0.8333"><div class="grow" tabindex="0" data-tip="Mistral-7B · full-MMLU energy: FP4 105%, NF4 107%, NVFP4 51% of 16-bit"><span class="grow__k">Mistral-7B</span><span class="grow__bars"><span class="gbar gbar--fp4" style="width:87.5%"></span><span class="gbar gbar--nf4" style="width:89.17%"></span><span class="gbar gbar--nvfp4" style="width:42.5%"></span></span></div><div class="grow" tabindex="0" data-tip="Llama-3.1-8B · full-MMLU energy: FP4 106%, NF4 107%, NVFP4 50% of 16-bit"><span class="grow__k">Llama-3.1-8B</span><span class="grow__bars"><span class="gbar gbar--fp4" style="width:88.33%"></span><span class="gbar gbar--nf4" style="width:89.17%"></span><span class="gbar gbar--nvfp4" style="width:41.67%"></span></span></div><div class="grow" tabindex="0" data-tip="Qwen2.5-7B · full-MMLU energy: FP4 106%, NF4 108%, NVFP4 52% of 16-bit"><span class="grow__k">Qwen2.5-7B</span><span class="grow__bars"><span class="gbar gbar--fp4" style="width:88.33%"></span><span class="gbar gbar--nf4" style="width:90%"></span><span class="gbar gbar--nvfp4" style="width:43.33%"></span></span></div><div class="grow" tabindex="0" data-tip="Phi-3-mini · full-MMLU energy: FP4 103%, NF4 105%, NVFP4 53% of 16-bit"><span class="grow__k">Phi-3-mini</span><span class="grow__bars"><span class="gbar gbar--fp4" style="width:85.83%"></span><span class="gbar gbar--nf4" style="width:87.5%"></span><span class="gbar gbar--nvfp4" style="width:44.17%"></span></span></div><div class="grow" tabindex="0" data-tip="Gemma-3-4B · full-MMLU energy: FP4 103%, NF4 103%, NVFP4 71% of 16-bit"><span class="grow__k">Gemma-3-4B</span><span class="grow__bars"><span class="gbar gbar--fp4" style="width:85.83%"></span><span class="gbar gbar--nf4" style="width:85.83%"></span><span class="gbar gbar--nvfp4" style="width:59.17%"></span></span></div></div>
+          <div class="gaxis" aria-hidden="true"><span style="left:0%">0%</span><span style="left:41.67%">50%</span><span style="left:83.33%">100%</span></div>
+          <p class="panel__note">FP4, NF4: 103–108% · NVFP4: 50–71%</p>
+        </div>
+        <div class="panel">
+          <h4>MMLU accuracy<span>change vs 16-bit, in points</span></h4>
+          <div class="gplot" style="--ref:0.8000"><div class="grow" tabindex="0" data-tip="Mistral-7B · MMLU change: FP4 −1.1, NF4 −1.2, NVFP4 −1.7 points (16-bit: 50.3%)"><span class="grow__k">Mistral-7B</span><span class="grow__bars"><span class="gbar gbar--fp4 gbar--neg" style="margin-left:69.1%;width:10.9%"></span><span class="gbar gbar--nf4 gbar--neg" style="margin-left:68.5%;width:11.5%"></span><span class="gbar gbar--nvfp4 gbar--neg" style="margin-left:63.3%;width:16.7%"></span></span></div><div class="grow" tabindex="0" data-tip="Llama-3.1-8B · MMLU change: FP4 −3.0, NF4 −1.6, NVFP4 +0.2 points (16-bit: 46.4%)"><span class="grow__k">Llama-3.1-8B</span><span class="grow__bars"><span class="gbar gbar--fp4 gbar--neg" style="margin-left:50.2%;width:29.8%"></span><span class="gbar gbar--nf4 gbar--neg" style="margin-left:63.5%;width:16.5%"></span><span class="gbar gbar--nvfp4 gbar--pos" style="margin-left:80%;width:2.2%"></span></span></div><div class="grow" tabindex="0" data-tip="Qwen2.5-7B · MMLU change: FP4 +1.2, NF4 +1.1, NVFP4 −1.5 points (16-bit: 59.4%)"><span class="grow__k">Qwen2.5-7B</span><span class="grow__bars"><span class="gbar gbar--fp4 gbar--pos" style="margin-left:80%;width:11.9%"></span><span class="gbar gbar--nf4 gbar--pos" style="margin-left:80%;width:10.6%"></span><span class="gbar gbar--nvfp4 gbar--neg" style="margin-left:65%;width:15%"></span></span></div><div class="grow" tabindex="0" data-tip="Phi-3-mini · MMLU change: FP4 −2.6, NF4 −2.0, NVFP4 −6.7 points (16-bit: 53.5%)"><span class="grow__k">Phi-3-mini</span><span class="grow__bars"><span class="gbar gbar--fp4 gbar--neg" style="margin-left:54.3%;width:25.7%"></span><span class="gbar gbar--nf4 gbar--neg" style="margin-left:59.7%;width:20.3%"></span><span class="gbar gbar--nvfp4 gbar--neg" style="margin-left:13.1%;width:66.9%"></span></span></div><div class="grow" tabindex="0" data-tip="Gemma-3-4B · MMLU change: FP4 −2.2, NF4 −1.4, NVFP4 −1.2 points (16-bit: 40.7%)"><span class="grow__k">Gemma-3-4B</span><span class="grow__bars"><span class="gbar gbar--fp4 gbar--neg" style="margin-left:58%;width:22%"></span><span class="gbar gbar--nf4 gbar--neg" style="margin-left:65.9%;width:14.1%"></span><span class="gbar gbar--nvfp4 gbar--neg" style="margin-left:67.6%;width:12.4%"></span></span></div></div>
+          <div class="gaxis" aria-hidden="true"><span style="left:0%">−8</span><span style="left:40%">−4</span><span style="left:80%">0</span><span style="left:100%">+2</span></div>
+          <p class="panel__note">From +1.2 (weight-only, Qwen) to −6.7 (NVFP4, Phi-3-mini)</p>
+        </div>
+        </div>
+        <details class="chart__table">
+          <summary>View as table</summary>
+          <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Model</th><th scope="col">Format</th><th scope="col">Energy / token</th><th scope="col">MMLU energy</th><th scope="col">MMLU acc.</th><th scope="col">vs 16-bit</th></tr></thead>
+            <tbody>
+            <tr><th scope="row">Mistral-7B</th><td>FP4</td><td>44%</td><td>105%</td><td>49.18</td><td>−1.1</td></tr>
+            <tr><th scope="row">Mistral-7B</th><td>NF4</td><td>45%</td><td>107%</td><td>49.12</td><td>−1.2</td></tr>
+            <tr><th scope="row">Mistral-7B</th><td>NVFP4</td><td>44%</td><td>51%</td><td>48.60</td><td>−1.7</td></tr>
+            <tr><th scope="row">Llama-3.1-8B</th><td>FP4</td><td>47%</td><td>106%</td><td>43.46</td><td>−3.0</td></tr>
+            <tr><th scope="row">Llama-3.1-8B</th><td>NF4</td><td>48%</td><td>107%</td><td>44.79</td><td>−1.6</td></tr>
+            <tr><th scope="row">Llama-3.1-8B</th><td>NVFP4</td><td>49%</td><td>50%</td><td>46.66</td><td>+0.2</td></tr>
+            <tr><th scope="row">Qwen2.5-7B</th><td>FP4</td><td>49%</td><td>106%</td><td>60.55</td><td>+1.2</td></tr>
+            <tr><th scope="row">Qwen2.5-7B</th><td>NF4</td><td>49%</td><td>108%</td><td>60.42</td><td>+1.1</td></tr>
+            <tr><th scope="row">Qwen2.5-7B</th><td>NVFP4</td><td>49%</td><td>52%</td><td>57.86</td><td>−1.5</td></tr>
+            <tr><th scope="row">Phi-3-mini</th><td>FP4</td><td>47%</td><td>103%</td><td>50.89</td><td>−2.6</td></tr>
+            <tr><th scope="row">Phi-3-mini</th><td>NF4</td><td>47%</td><td>105%</td><td>51.43</td><td>−2.0</td></tr>
+            <tr><th scope="row">Phi-3-mini</th><td>NVFP4</td><td>47%</td><td>53%</td><td>46.77</td><td>−6.7</td></tr>
+            <tr><th scope="row">Gemma-3-4B</th><td>FP4</td><td>55%</td><td>103%</td><td>38.46</td><td>−2.2</td></tr>
+            <tr><th scope="row">Gemma-3-4B</th><td>NF4</td><td>56%</td><td>103%</td><td>39.25</td><td>−1.4</td></tr>
+            <tr><th scope="row">Gemma-3-4B</th><td>NVFP4</td><td>55%</td><td>71%</td><td>39.42</td><td>−1.2</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+        <p class="chart__note">The line in each panel marks the 16-bit baseline; hover or focus a row for its numbers. Energy is idle-subtracted (95% intervals within ±2 points). Accuracy changes are point estimates. Gemma-3-4B runs in BF16; Phi-3-mini is instruction-tuned.</p>
+      </figure>
+
+      <div class="row__body row__after">
+        <p class="next"><b>Next:</b> test a production INT4 kernel (Marlin), fuse NVFP4's activation quantization to cut its overhead, and extend the study to 70B-class models.</p>
+      </div>
+    </section>
+
+    <section class="row" id="projects" aria-labelledby="projects-h">
+      <h2 class="row__label" id="projects-h">Projects</h2>
+      <div class="row__body">
+          <article class="entry" id="p-pm25">
+            <div class="entry__head">
+              <h3><a href="https://github.com/kartiks15/ANRF_AISEHack_VibeCoders" target="_blank" rel="noopener">PM2.5 Forecaster</a> <span class="badge">1st place</span></h3>
+              <p class="entry__date">Feb – Apr 2026</p>
+            </div>
+            <p>Forecasts PM2.5 concentration fields over India up to 16 hours ahead. A ConvLSTM encoder-decoder reads 10 hours of 15 weather and emissions variables on a 140 × 124 grid, and a physics-based WindWarp module moves pollution along the wind field with differentiable grid sampling, so transport follows the physics instead of being learned from scratch. It scored 89.25 on the SMAPE-based hackathon metric and took 1st place in Theme 2 at <a href="https://precog.iiit.ac.in/aisehack/past-editions/edition-1" target="_blank" rel="noopener">ANRF AISEHack 2026</a>. Built with Mohammad Saad Nathani, Meet Patel, Pranav Mundhra and Anushka Sharma as team VibeCoders.</p>
+            <ul class="entry__links"><li><a href="https://github.com/kartiks15/ANRF_AISEHack_VibeCoders" target="_blank" rel="noopener">Code<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li><a href="https://drive.google.com/file/d/16dUQPQ_1d0vHWP6nEnu2f8lM_Ie1vkV6/view" target="_blank" rel="noopener">Report<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li><a href="https://drive.google.com/file/d/1_hshWcapUWwVLjvo83h8opEsP8ZbSe4a/view" target="_blank" rel="noopener">Slides<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li></ul>
+            <p class="entry__tags">Python · PyTorch · ConvLSTM · physics-informed ML</p>
+          </article>
+
+          <article class="entry" id="p-safesite">
+            <div class="entry__head">
+              <h3><a href="https://nearmiss.saadnathani.me/" target="_blank" rel="noopener">SafeSite</a> <span class="badge">Finalist</span></h3>
+              <p class="entry__date">Nov 2026</p>
+            </div>
+            <p>Near-miss and hazard reporting for a chemical plant. A worker reports with a photo and a voice note in English, Hindi, Marathi or Hinglish, even with no signal. An AI model drafts the description and labels, and code checks the draft against the worker's own words. Fixed rules set the severity, owner and deadline and escalate anything overdue, and a person confirms every root cause using the Eindhoven Classification Model from near-miss research. Built with Mohammad Saad Nathani and Pranav Mundhra as team Odysseus at the LYB Mumbai Hackathon 2026.</p>
+            <p class="entry__part"><b>My part:</b> I built a complete second version overnight. Its plant map, worker PIN sign-in, offline reporting, photo privacy (location data stripped, faces blurred), on-server voice-to-text, induction quiz and Docker deployment were merged into the team's final app.</p>
+            <ul class="entry__links"><li><a href="https://nearmiss.saadnathani.me/" target="_blank" rel="noopener">Live demo<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li></ul>
+            <p class="entry__tags">Python · FastAPI · OpenAI API · faster-whisper · OpenCV · offline PWA</p>
+          </article>
+
+          <article class="entry" id="p-baadhi">
+            <div class="entry__head">
+              <h3><a href="https://github.com/kartiks15/Baadh-watch" target="_blank" rel="noopener">Baadhi Watch</a></h3>
+              <p class="entry__date">2026</p>
+            </div>
+            <p>Maps flood damage from satellite data. Given an area and a date, it fuses Sentinel-1 radar, Sentinel-2 optical imagery and elevation with pre-flood OpenStreetMap to show where the water went, which buildings, roads and bridges were hit and which settlements are cut off from hospitals, then writes a situation report in English and Nepali. On the August 2026 Nepal flood it matched Copernicus EMS damage maps with 0.71 IoU (F1 0.83), found 96% of damaged buildings and ran in 526 seconds from raw data. Built for Track B of the Multimodal AI Hackathon 2026 on Devpost.</p>
+            <ul class="entry__links"><li><a href="https://github.com/kartiks15/Baadh-watch" target="_blank" rel="noopener">Code<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li></ul>
+            <p class="entry__tags">Python · PyTorch · U-Net · ONNX · Sentinel-1/2 · OpenStreetMap</p>
+          </article>
+
+          <article class="entry" id="p-floatchat">
+            <div class="entry__head">
+              <h3><a href="https://floatchat.duckdns.org/" target="_blank" rel="noopener">FloatChat</a></h3>
+              <p class="entry__date">Dec 2025 – Feb 2026</p>
+            </div>
+            <p>Ask questions about Argo ocean-float data from the Indian Ocean in plain English. A LangGraph agent queries PostgreSQL through a custom MCP server, and the app maps float tracks and plots T-S diagrams, BGC parameters and depth profiles. It cut report preparation from 2–3 days to a few hours, about 4× less working time.</p>
+            <ul class="entry__links"><li><a href="https://floatchat.duckdns.org/" target="_blank" rel="noopener">Live demo<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li><li><a href="https://github.com/kartiks15/FloatChat" target="_blank" rel="noopener">Code<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li></ul>
+            <p class="entry__tags">LangGraph · MCP · GPT-4o · PostgreSQL · Plotly</p>
+          </article>
+
+          <article class="entry" id="p-rag">
+            <div class="entry__head">
+              <h3><a href="https://github.com/kartiks15/Private-RAG" target="_blank" rel="noopener">Offline Multimodal RAG</a></h3>
+              <p class="entry__date">Aug – Oct 2025</p>
+            </div>
+            <p>Searches text, images and audio with one query, entirely on your own machine with no cloud APIs. Whisper transcribes audio, CLIP and sentence-transformers embed everything into a FAISS index, and images and audio share one embedding space, so a spoken phrase can find a photo. It reached 73.87% Recall@10 across 2,000+ documents and 500 audio clips.</p>
+            <ul class="entry__links"><li><a href="https://github.com/kartiks15/Private-RAG" target="_blank" rel="noopener">Code<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li></ul>
+            <p class="entry__tags">FAISS · CLIP · Whisper · FastAPI · Dash</p>
+          </article>
+
+          <article class="entry" id="p-hms">
+            <div class="entry__head">
+              <h3><a href="https://github.com/kartiks15/hospital-mangement-system" target="_blank" rel="noopener">MediCare HMS</a></h3>
+              <p class="entry__date">2026</p>
+            </div>
+            <p>A hospital management system for six roles, from receptionist to pharmacist. Each signed-in user's queries run as their own PostgreSQL role, so grants, row-level security and triggers enforce the rules inside the database. Row locks on payments and dispensing prevent double charges and overselling stock, and passwords are bcrypt-hashed with lockout after five failed logins.</p>
+            <ul class="entry__links"><li><a href="https://github.com/kartiks15/hospital-mangement-system" target="_blank" rel="noopener">Code<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li></ul>
+            <p class="entry__tags">PostgreSQL · PL/pgSQL · Streamlit · pytest</p>
+          </article>
+
+          <article class="entry" id="p-koala">
+            <div class="entry__head">
+              <h3><a href="https://github.com/kartiks15/koala" target="_blank" rel="noopener">Koala</a> <span class="badge">In development</span></h3>
+              <p class="entry__date">Aug 2026 – present</p>
+            </div>
+            <p>A vector search library I'm writing from scratch: exact nearest-neighbour search on Triton GPU kernels, falling back to PyTorch on CPU, with a micro-benchmark harness and tests.</p>
+            <ul class="entry__links"><li><a href="https://github.com/kartiks15/koala" target="_blank" rel="noopener">Code<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li></ul>
+            <p class="entry__tags">Triton · PyTorch · pytest</p>
+          </article>
+
+          <div class="more">
+            <h3>Smaller builds</h3>
+            <ul>
+              <li><a href="https://github.com/kartiks15/Customer-Support-Ticket-Automation" target="_blank" rel="noopener">Support ticket automation<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a> DistilBERT fine-tuned on Banking77 to sort queries into 77 intents, set a priority and send low-confidence cases to a person.</li>
+              <li><a href="https://github.com/kartiks15/Document-Query-System" target="_blank" rel="noopener">Document query system<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a> Question answering over PDF, Word, Excel, PowerPoint and images, with FAISS retrieval and query routing behind FastAPI.</li>
+              <li><a href="https://github.com/kartiks15/Multivariate-Market-Anomaly-Detection" target="_blank" rel="noopener">Market anomaly detection<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a> A three-stage detector for NIFTY indices using rolling z-scores and Mahalanobis distance.</li>
+              <li><a href="https://github.com/kartiks15/gpt2_by_me" target="_blank" rel="noopener">GPT-2 from scratch<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a> A GPT-2-style decoder written by hand in PyTorch, with causal attention, training loop and decoding.</li>
+              <li><a href="https://github.com/kartiks15/tinkering-cuda" target="_blank" rel="noopener">CUDA practice<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a> CUDA C++ fundamentals: memory, kernel launches and the runtime API.</li>
+            </ul>
+          </div>
+      </div>
+    </section>
+
+    <section class="row" id="experience" aria-labelledby="experience-h">
+      <h2 class="row__label" id="experience-h">Experience</h2>
+      <div class="row__body">
+        <article class="entry">
+          <div class="entry__head"><h3>Data Analysis Intern, Bhilwara Halchal</h3><p class="entry__date">May – Aug 2026</p></div>
+          <p>Analysed app-based news consumption data for engagement trends, content performance and readership patterns. Cleaned and processed the data with SQL, Python and Excel, and built reports and visualizations that tracked key metrics for the team.</p>
+        </article>
+        <article class="entry">
+          <div class="entry__head"><h3>Member &amp; Volunteer, ACM Student Chapter, NMIMS Mumbai</h3><p class="entry__date">Oct 2025 – present</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="row" id="education" aria-labelledby="education-h">
+      <h2 class="row__label" id="education-h">Education</h2>
+      <div class="row__body">
+        <article class="entry">
+          <div class="entry__head"><h3>B.Tech, Artificial Intelligence and Machine Learning</h3><p class="entry__date">2023 – 2027</p></div>
+          <p>SVKM's NMIMS MPSTME, Mumbai. Capstone on the energy and accuracy cost of 4-bit LLMs, completed October 2026.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="row" id="awards" aria-labelledby="awards-h">
+      <h2 class="row__label" id="awards-h">Awards</h2>
+      <div class="row__body">
+        <ul class="plain">
+          <li><span><b>1st place</b>, ANRF AISEHack 2026, Theme 2: pollution forecasting</span><span class="plain__date">Apr 2026</span></li>
+          <li><span><b>Finalist</b>, LYB Mumbai Hackathon 2026 (LyondellBasell)</span><span class="plain__date">Nov 2026</span></li>
+          <li><span><b>2nd place</b>, Yugantar 2025, Smart India Hackathon internal round</span><span class="plain__date">Oct 2025</span></li>
+        </ul>
+        <h3 class="sub">Certifications</h3>
+        <ul class="plain">
+          <li><span>Machine Learning with Python Programming, NPTEL</span></li>
+          <li><span>Deep Learning, IIT Ropar (NPTEL)</span></li>
+          <li><span>Data Analytics, Google</span></li>
+          <li><span>AWS Builder Essentials, AWS</span></li>
         </ul>
       </div>
     </section>
 
-    <!-- About -->
-    <section class="section" id="about" aria-labelledby="about-h">
-      <div class="wrap section__grid">
-        <header class="section__head"><span class="section__num">01</span><h2 id="about-h">About</h2></header>
-        <div class="section__body">
-          <div class="prose">
-            <p>I like the parts of machine learning that sit inside the model and close to the hardware: what an LLM actually computes, where inference time, memory and energy go, and how to run a good model on modest infrastructure.</p>
-            <p>My B.Tech thesis measures the energy cost of 4-bit quantization, and my capstone is a Triton matmul kernel aimed at lowering GPU power draw. Before that I built a physics-informed PM2.5 forecaster that won ANRF AISEHack 2026, a satellite flood-damage mapper for a Devpost hackathon, an offline multimodal RAG system, and a natural-language interface for ocean data. In summer 2026 I interned as a data analyst at Bhilwara Halchal.</p>
-          </div>
-          <dl class="focus">
-            <div><dt>Inference efficiency</dt><dd>Quantization formats, throughput, and measuring energy as well as accuracy.</dd></div>
-            <div><dt>GPU kernels</dt><dd>Triton and CUDA C++, starting from matrix multiplication.</dd></div>
-            <div><dt>Retrieval systems</dt><dd>Vector search, multimodal embeddings and RAG pipelines that run offline.</dd></div>
-            <div><dt>Scientific ML</dt><dd>Physics-informed and satellite-based models for air quality and floods.</dd></div>
-          </dl>
-        </div>
+    <section class="row" id="skills" aria-labelledby="skills-h">
+      <h2 class="row__label" id="skills-h">Skills</h2>
+      <div class="row__body">
+        <dl class="skills">
+          <div><dt>Languages</dt><dd>Python, C++, CUDA C++, SQL, PL/pgSQL</dd></div>
+          <div><dt>Machine learning</dt><dd>PyTorch, TensorFlow, scikit-learn, Hugging Face Transformers, ONNX, OpenCV, AutoML</dd></div>
+          <div><dt>GPU &amp; efficiency</dt><dd>Triton, 4-bit quantization (FP4, NF4, NVFP4), NVML energy measurement, mixed precision</dd></div>
+          <div><dt>LLMs &amp; retrieval</dt><dd>RAG pipelines, FAISS, sentence-transformers, CLIP, Whisper, LangChain and LangGraph, MCP, OpenAI and Claude APIs</dd></div>
+          <div><dt>Data</dt><dd>NumPy, Pandas, SciPy, xarray, NetCDF, Sentinel-1/2 imagery, OpenStreetMap, Excel, Power BI, Tableau</dd></div>
+          <div><dt>Backend &amp; tools</dt><dd>PostgreSQL, MySQL, SQL Server, FastAPI, Flask, Streamlit, pytest, Docker, Git, Linux, AWS (SageMaker, S3)</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- Research -->
-    <section class="section" id="research" aria-labelledby="research-h">
-      <div class="wrap section__grid">
-        <header class="section__head"><span class="section__num">02</span><h2 id="research-h">Research</h2></header>
-        <div class="section__body">
-          <article class="study" id="thesis">
-            <p class="meta">B.Tech thesis · In progress · With two teammates, advised by Prof. Rajesh Verma</p>
-            <h3>Is a smaller model greener? The energy cost of 4-bit LLMs</h3>
-            <p class="prose-p">We compare the two 4-bit post-training quantization formats, FP4 and NF4, on energy use as well as accuracy. The early results cut against the assumption that smaller means greener.</p>
-
-            <div class="study__cols">
-              <dl class="spec">
-                <div><dt>Model</dt><dd>Mistral-7B in FP16, FP4 and NF4</dd></div>
-                <div><dt>Hardware</dt><dd>NVIDIA RTX PRO 6000</dd></div>
-                <div><dt>Quality</dt><dd>MMLU, WikiText-2 perplexity, hidden-state similarity to FP16</dd></div>
-                <div><dt>Cost</dt><dd>Throughput, and GPU power from NVML (idle-subtracted, PUE-scaled)</dd></div>
-                <div><dt>Protocol</dt><dd>Five trials in randomized order</dd></div>
-              </dl>
-              <div>
-                <h4 class="label">Findings so far</h4>
-                <ol class="findings">
-                  <li>4-bit cuts peak GPU memory from 14.5 GB to about 4.6 GB and raises throughput from 71.1 to about 90 tokens/s.</li>
-                  <li><strong>It doesn't save energy.</strong> A full MMLU run uses about 5% more than FP16: 0.104 kWh (FP4) and 0.105 kWh (NF4) against 0.0994.</li>
-                  <li>NF4 beats FP4 on accuracy (0.491 vs 0.487), perplexity and hidden-state similarity, and uses slightly more energy.</li>
-                </ol>
-              </div>
-            </div>
-
-            <figure class="card chart" aria-labelledby="chart-title">
-              <figcaption class="chart__cap">
-                <div>
-                  <h4 id="chart-title">Mistral-7B at three precisions</h4>
-                  <p>Preliminary results. Hover or focus a bar for details.</p>
-                </div>
-                <ul class="legend" aria-label="Legend">
-                  <li><span class="sw sw--fp16"></span>FP16</li>
-                  <li><span class="sw sw--fp4"></span>FP4</li>
-                  <li><span class="sw sw--nf4"></span>NF4</li>
-                </ul>
-              </figcaption>
-
-              <div class="chart__grid">
-                <div class="mini">
-                  <h5>Peak GPU memory<span>GB, lower is better</span></h5>
-                  <div class="bar-row" tabindex="0" data-tip="FP16 · 14.5 GB peak"><span class="bar-row__k">FP16</span><span class="bar-track"><span class="bar bar--fp16" style="--w:90.6%"></span></span><span class="bar-row__v">14.5</span></div>
-                  <div class="bar-row" tabindex="0" data-tip="FP4 · ≈4.6 GB peak · −68% vs FP16"><span class="bar-row__k">FP4</span><span class="bar-track"><span class="bar bar--fp4" style="--w:28.75%"></span></span><span class="bar-row__v">≈4.6</span></div>
-                  <div class="bar-row" tabindex="0" data-tip="NF4 · ≈4.6 GB peak · −68% vs FP16"><span class="bar-row__k">NF4</span><span class="bar-track"><span class="bar bar--nf4" style="--w:28.75%"></span></span><span class="bar-row__v">≈4.6</span></div>
-                  <div class="axis" aria-hidden="true"><span>0</span><span>16</span></div>
-                  <p class="mini__delta">4-bit: <b>−68%</b> vs FP16</p>
-                </div>
-
-                <div class="mini">
-                  <h5>Throughput<span>tokens/s, higher is better</span></h5>
-                  <div class="bar-row" tabindex="0" data-tip="FP16 · 71.1 tokens/s"><span class="bar-row__k">FP16</span><span class="bar-track"><span class="bar bar--fp16" style="--w:71.1%"></span></span><span class="bar-row__v">71.1</span></div>
-                  <div class="bar-row" tabindex="0" data-tip="FP4 · ≈90 tokens/s · +27% vs FP16"><span class="bar-row__k">FP4</span><span class="bar-track"><span class="bar bar--fp4" style="--w:90%"></span></span><span class="bar-row__v">≈90</span></div>
-                  <div class="bar-row" tabindex="0" data-tip="NF4 · ≈90 tokens/s · +27% vs FP16"><span class="bar-row__k">NF4</span><span class="bar-track"><span class="bar bar--nf4" style="--w:90%"></span></span><span class="bar-row__v">≈90</span></div>
-                  <div class="axis" aria-hidden="true"><span>0</span><span>100</span></div>
-                  <p class="mini__delta">4-bit: <b>+27%</b> vs FP16</p>
-                </div>
-
-                <div class="mini mini--key">
-                  <h5>Energy for a full MMLU run<span>kWh, lower is better</span></h5>
-                  <div class="bar-row" tabindex="0" data-tip="FP16 · 0.0994 kWh"><span class="bar-row__k">FP16</span><span class="bar-track"><span class="bar bar--fp16" style="--w:82.8%"></span></span><span class="bar-row__v">0.0994</span></div>
-                  <div class="bar-row" tabindex="0" data-tip="FP4 · 0.104 kWh · +4.6% vs FP16"><span class="bar-row__k">FP4</span><span class="bar-track"><span class="bar bar--fp4" style="--w:86.7%"></span></span><span class="bar-row__v">0.104</span></div>
-                  <div class="bar-row" tabindex="0" data-tip="NF4 · 0.105 kWh · +5.6% vs FP16"><span class="bar-row__k">NF4</span><span class="bar-track"><span class="bar bar--nf4" style="--w:87.5%"></span></span><span class="bar-row__v">0.105</span></div>
-                  <div class="axis" aria-hidden="true"><span>0</span><span>0.12</span></div>
-                  <p class="mini__delta">FP4 <b>+4.6%</b> · NF4 <b>+5.6%</b> vs FP16</p>
-                </div>
-
-                <div class="mini">
-                  <h5>MMLU accuracy<span>higher is better</span></h5>
-                  <div class="bar-row bar-row--na"><span class="bar-row__k">FP16</span><span class="bar-track"></span><span class="bar-row__v">n/a</span></div>
-                  <div class="bar-row" tabindex="0" data-tip="FP4 · 0.487 MMLU"><span class="bar-row__k">FP4</span><span class="bar-track"><span class="bar bar--fp4" style="--w:81.2%"></span></span><span class="bar-row__v">0.487</span></div>
-                  <div class="bar-row" tabindex="0" data-tip="NF4 · 0.491 MMLU · best 4-bit format"><span class="bar-row__k">NF4</span><span class="bar-track"><span class="bar bar--nf4" style="--w:81.8%"></span></span><span class="bar-row__v">0.491</span></div>
-                  <div class="axis" aria-hidden="true"><span>0</span><span>0.6</span></div>
-                  <p class="mini__delta">NF4 leads FP4 by <b>0.004</b></p>
-                </div>
-              </div>
-
-              <details class="chart__table">
-                <summary>View as table</summary>
-                <div class="table-scroll">
-                  <table>
-                    <thead><tr><th scope="col">Metric</th><th scope="col">FP16</th><th scope="col">FP4</th><th scope="col">NF4</th></tr></thead>
-                    <tbody>
-                      <tr><th scope="row">Peak GPU memory (GB)</th><td>14.5</td><td>≈4.6</td><td>≈4.6</td></tr>
-                      <tr><th scope="row">Throughput (tokens/s)</th><td>71.1</td><td>≈90</td><td>≈90</td></tr>
-                      <tr><th scope="row">Energy, full MMLU (kWh)</th><td>0.0994</td><td>0.104</td><td>0.105</td></tr>
-                      <tr><th scope="row">MMLU accuracy</th><td>n/a</td><td>0.487</td><td>0.491</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-              </details>
-              <p class="chart__note">4-bit memory and throughput are approximate and shared by FP4 and NF4. FP16 MMLU accuracy isn't reported here yet.</p>
-            </figure>
-
-            <p class="study__next"><span class="label">Next</span>Phi-3, Gemma 3 and Qwen 2.5 7B, then a paper.</p>
-          </article>
-
-          <article class="study study--small" id="kernel">
-            <p class="meta">Capstone project · In progress</p>
-            <h3>A matmul kernel that draws less power</h3>
-            <p class="prose-p">Matrix multiplication dominates LLM inference cost, so any saving there carries into every model in the thesis. I'm writing my own matmul kernel in Triton aimed at lower GPU power draw, and I'll measure it with the same NVML harness so its numbers compare directly with the thesis results.</p>
-            <p class="links-inline"><a href="docs/Research%20Associate%20Statement.pdf" target="_blank" rel="noopener">Research statement (PDF)<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-          </article>
-        </div>
+    <section class="row" id="contact" aria-labelledby="contact-h">
+      <h2 class="row__label" id="contact-h">Contact</h2>
+      <div class="row__body">
+        <p class="contact__lede">I'm looking for a six-month research internship from December 2026 to May 2027, ideally on inference efficiency. Email is the fastest way to reach me.</p>
+        <p class="contact__email"><a href="mailto:hypertex.work@gmail.com">hypertex.work@gmail.com</a> <button class="copy js-copy" type="button" data-copy="hypertex.work@gmail.com">Copy</button></p>
+        <p class="contact__time">Mumbai, India · IST (UTC+5:30)<span class="js-ist-wrap" hidden> · <span class="js-ist"></span> local time</span></p>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section class="section" id="projects" aria-labelledby="projects-h">
-      <div class="wrap section__grid">
-        <header class="section__head"><span class="section__num">03</span><h2 id="projects-h">Projects</h2></header>
-        <div class="section__body">
-
-          <article class="card project project--featured" id="p-pm25">
-            <div class="project__main">
-              <div class="project__head">
-                <div>
-                  <p class="meta">Physics-informed ML · Feb – Apr 2026</p>
-                  <h3>PM2.5 Forecaster</h3>
-                </div>
-                <span class="badge"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg>1st place, ANRF AISEHack 2026</span>
-              </div>
-              <p>Forecasts PM2.5 concentration fields over India up to 16 hours ahead. A ConvLSTM encoder reads 10 hours of weather and emissions data. The decoder rolls forward one hour at a time, and a WindWarp module moves pollution along the wind field with differentiable grid sampling, so transport follows the physics instead of being learned from scratch.</p>
-              <ol class="pipeline" aria-label="Model pipeline">
-                <li><b>10 h of history</b><span>15 weather &amp; emission variables</span></li>
-                <li><b>ConvLSTM encoder</b><span>with dilated convolutions</span></li>
-                <li><b>WindWarp decoder</b><span>advection + spatial attention</span></li>
-                <li><b>16 h forecast</b><span>140 × 124 grid over India</span></li>
-              </ol>
-              <div class="project__foot">
-                <ul class="tags" aria-label="Stack"><li>PyTorch</li><li>ConvLSTM</li><li>Physics-informed ML</li><li>Mixed precision</li></ul>
-                <a class="link" href="https://github.com/kartiks15/ANRF_AISEHack_VibeCoders" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>Code<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-              </div>
-            </div>
-            <dl class="facts">
-              <div class="facts__lead"><dt>Hackathon score (SMAPE-based)</dt><dd>89.25</dd></div>
-              <div><dt>Forecast horizon</dt><dd>16 h</dd></div>
-              <div><dt>Grid</dt><dd>140 × 124</dd></div>
-              <div><dt>Inputs</dt><dd>15 variables</dd></div>
-              <div><dt>Training</dt><dd>~10 h on one T4</dd></div>
-            </dl>
-          </article>
-
-          <article class="card project project--featured" id="p-baadhi">
-            <div class="project__main">
-              <div class="project__head">
-                <div>
-                  <p class="meta">Geospatial ML · Multimodal AI Hackathon 2026, Devpost</p>
-                  <h3>Baadhi Watch</h3>
-                </div>
-                <span class="badge badge--muted">Track B: Mapping flood damage from space</span>
-              </div>
-              <p>Give it an area and a flood date, and it maps where the water went, which buildings, roads and bridges were hit, and which settlements are cut off from hospitals and towns. It fuses Sentinel-1 radar, Sentinel-2 optical imagery and elevation data with pre-flood OpenStreetMap, then writes a situation report in English and Nepali.</p>
-              <ol class="pipeline" aria-label="Pipeline">
-                <li><b>Before/after imagery</b><span>Sentinel-1 radar, Sentinel-2 optical, 30 m DEM</span></li>
-                <li><b>Flood evidence</b><span>U-Net, radar change and terrain checks vote</span></li>
-                <li><b>Damage overlay</b><span>buildings, roads and bridges from OSM</span></li>
-                <li><b>Cut-off analysis</b><span>road-graph search from hospitals and towns</span></li>
-              </ol>
-              <div class="project__foot">
-                <ul class="tags" aria-label="Stack"><li>PyTorch</li><li>U-Net</li><li>ONNX</li><li>Sentinel-1/2</li><li>OpenStreetMap</li></ul>
-                <a class="link" href="https://github.com/kartiks15/Baadh-watch" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>Code<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-              </div>
-            </div>
-            <dl class="facts">
-              <div class="facts__lead"><dt>Flood-extent IoU vs Copernicus EMS</dt><dd>0.71</dd></div>
-              <div><dt>F1 score</dt><dd>0.83</dd></div>
-              <div><dt>Damaged buildings found</dt><dd>96%</dd></div>
-              <div><dt>Runtime from raw data</dt><dd>526 s</dd></div>
-              <div><dt>Case study</dt><dd>Nepal, Aug 2026</dd></div>
-            </dl>
-          </article>
-
-          <div class="project-grid">
-            <article class="card project" id="p-hms">
-              <div class="project__head">
-                <div>
-                  <p class="meta">Database systems · 2026</p>
-                  <h3>MediCare HMS</h3>
-                </div>
-              </div>
-              <p>A hospital management system for six roles, from receptionist to pharmacist. Each signed-in user's queries run as their own PostgreSQL role, so grants, row-level security and triggers enforce the rules inside the database.</p>
-              <ul class="points">
-                <li>Row-level security limits doctors to their own records</li>
-                <li>Row locks on payments and dispensing prevent double charges and overselling stock</li>
-                <li>bcrypt password hashing, with lockout after 5 failed logins</li>
-              </ul>
-              <div class="project__foot">
-                <ul class="tags" aria-label="Stack"><li>PostgreSQL</li><li>PL/pgSQL</li><li>Streamlit</li><li>pytest</li></ul>
-                <a class="link" href="https://github.com/kartiks15/hospital-mangement-system" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>Code<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-              </div>
-            </article>
-
-            <article class="card project" id="p-rag">
-              <div class="project__head">
-                <div>
-                  <p class="meta">Retrieval · Aug – Oct 2025</p>
-                  <h3>Offline Multimodal RAG</h3>
-                </div>
-              </div>
-              <p>Searches text, images and audio with one query, entirely on your own machine with no cloud APIs. Images and audio share a CLIP embedding space, so a spoken phrase can find a photo.</p>
-              <ul class="points">
-                <li><b>73.87% Recall@10</b> across 2,000+ documents and 500 audio clips</li>
-                <li>Whisper transcription, CLIP and sentence-transformer embeddings, FAISS index</li>
-                <li>Separate FastAPI services for ingestion and retrieval, with a Dash dashboard</li>
-              </ul>
-              <div class="project__foot">
-                <ul class="tags" aria-label="Stack"><li>FAISS</li><li>CLIP</li><li>Whisper</li><li>FastAPI</li></ul>
-                <a class="link" href="https://github.com/kartiks15/Private-RAG" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>Code<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-              </div>
-            </article>
-
-            <article class="card project" id="p-floatchat">
-              <div class="project__head">
-                <div>
-                  <p class="meta">LLM agents · Dec 2025 – Feb 2026</p>
-                  <h3>FloatChat</h3>
-                </div>
-              </div>
-              <p>A natural-language interface for Argo ocean-float data from the Indian Ocean, so researchers can explore it without writing scripts.</p>
-              <ul class="points">
-                <li><b>Report prep cut from 2–3 days to a few hours</b>, about 4× less working time</li>
-                <li>A LangGraph agent queries PostgreSQL through a custom MCP server</li>
-                <li>Maps float tracks and plots T-S diagrams, BGC parameters and depth profiles</li>
-              </ul>
-              <div class="project__foot">
-                <ul class="tags" aria-label="Stack"><li>LangGraph</li><li>MCP</li><li>PostgreSQL</li><li>Plotly</li></ul>
-                <div class="project__links">
-                  <a class="link link--accent" href="https://52-206-45-156.nip.io/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg>Live demo<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                  <a class="link" href="https://github.com/kartiks15/FloatChat" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>Code<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                </div>
-              </div>
-            </article>
-
-            <article class="card project" id="p-koala">
-              <div class="project__head">
-                <div>
-                  <p class="meta">GPU systems · Aug 2026 – present</p>
-                  <h3>Koala</h3>
-                </div>
-                <span class="badge badge--muted">In development</span>
-              </div>
-              <p>A vector search library I'm writing from scratch. A flat in-memory index runs on Triton GPU kernels and falls back to PyTorch on CPU.</p>
-              <ul class="points">
-                <li>Exact nearest-neighbour search with custom Triton kernels</li>
-                <li>Falls back to PyTorch when no CUDA device is present</li>
-                <li>Micro-benchmark harness and pytest suite</li>
-              </ul>
-              <div class="project__foot">
-                <ul class="tags" aria-label="Stack"><li>Triton</li><li>PyTorch</li><li>pytest</li></ul>
-                <a class="link" href="https://github.com/kartiks15/koala" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>Code<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-              </div>
-            </article>
-          </div>
-
-          <h3 class="subhead">More on GitHub</h3>
-          <ul class="more">
-            <li>
-              <a href="https://github.com/kartiks15/Customer-Support-Ticket-Automation" target="_blank" rel="noopener">Support ticket automation<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-              <p>Fine-tuned DistilBERT on Banking77 to sort support queries into 77 intents, set a priority, and send low-confidence cases to a human.</p>
-            </li>
-            <li>
-              <a href="https://github.com/kartiks15/Document-Query-System" target="_blank" rel="noopener">Document query system<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-              <p>Question answering over PDF, Word, Excel, PowerPoint and images, with FAISS retrieval, query routing and a FastAPI backend.</p>
-            </li>
-            <li>
-              <a href="https://github.com/kartiks15/Multivariate-Market-Anomaly-Detection" target="_blank" rel="noopener">Market anomaly detection<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-              <p>A three-stage detector for NIFTY indices using rolling z-scores and Mahalanobis distance, aimed at spotting speculative bubbles.</p>
-            </li>
-            <li>
-              <a href="https://github.com/kartiks15/gpt2_by_me" target="_blank" rel="noopener">GPT-2 from scratch<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-              <p>A GPT-2-style decoder written by hand in PyTorch: causal multi-head attention, the training loop and greedy decoding.</p>
-            </li>
-            <li>
-              <a href="https://github.com/kartiks15/tinkering-cuda" target="_blank" rel="noopener">CUDA practice<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-              <p>CUDA C++ fundamentals: host and device memory, kernel launches and the runtime API.</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience & education -->
-    <section class="section" id="experience" aria-labelledby="experience-h">
-      <div class="wrap section__grid">
-        <header class="section__head"><span class="section__num">04</span><h2 id="experience-h">Experience</h2></header>
-        <div class="section__body">
-          <ol class="timeline">
-            <li class="entry">
-              <p class="entry__when">May – Aug 2026</p>
-              <div>
-                <h3>Data Analysis Intern</h3>
-                <p class="entry__org">Bhilwara Halchal</p>
-                <ul class="points">
-                  <li>Analysed app-based news consumption data for engagement trends, content performance and readership patterns</li>
-                  <li>Cleaned and processed datasets with SQL, Python and Excel</li>
-                  <li>Built reports and visualizations that tracked key metrics for the team</li>
-                </ul>
-              </div>
-            </li>
-            <li class="entry">
-              <p class="entry__when">Oct 2025 – present</p>
-              <div>
-                <h3>Member &amp; Volunteer</h3>
-                <p class="entry__org">ACM Student Chapter, NMIMS Mumbai</p>
-              </div>
-            </li>
-          </ol>
-
-          <h3 class="subhead">Education</h3>
-          <ol class="timeline">
-            <li class="entry">
-              <p class="entry__when">Jul 2023 – Sep 2027</p>
-              <div>
-                <h3>B.Tech, Artificial Intelligence and Machine Learning</h3>
-                <p class="entry__org">SVKM's NMIMS MPSTME, Mumbai</p>
-                <p class="entry__note">Thesis on the energy cost of 4-bit LLM quantization. Capstone on a low-power Triton matmul kernel.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills, awards, certifications -->
-    <section class="section" id="skills" aria-labelledby="skills-h">
-      <div class="wrap section__grid">
-        <header class="section__head"><span class="section__num">05</span><h2 id="skills-h">Skills</h2></header>
-        <div class="section__body">
-          <div class="skills">
-            <div class="skills__group"><h3 class="label">Languages</h3><ul class="dotlist"><li>Python</li><li>C++</li><li>CUDA C++</li><li>SQL</li><li>PL/pgSQL</li></ul></div>
-            <div class="skills__group"><h3 class="label">Machine learning</h3><ul class="dotlist"><li>PyTorch</li><li>TensorFlow</li><li>scikit-learn</li><li>Hugging Face Transformers</li><li>ONNX</li><li>AutoML</li></ul></div>
-            <div class="skills__group"><h3 class="label">GPU &amp; efficiency</h3><ul class="dotlist"><li>Triton</li><li>4-bit quantization (FP4, NF4)</li><li>NVML power measurement</li><li>Mixed precision</li></ul></div>
-            <div class="skills__group"><h3 class="label">LLMs &amp; retrieval</h3><ul class="dotlist"><li>RAG pipelines</li><li>FAISS</li><li>sentence-transformers</li><li>CLIP</li><li>Whisper</li><li>LangChain &amp; LangGraph</li><li>MCP</li><li>OpenAI &amp; Claude APIs</li></ul></div>
-            <div class="skills__group"><h3 class="label">Data</h3><ul class="dotlist"><li>NumPy</li><li>Pandas</li><li>SciPy</li><li>xarray</li><li>NetCDF</li><li>Sentinel-1/2 imagery</li><li>OpenStreetMap</li><li>Excel</li><li>Power BI</li><li>Tableau</li></ul></div>
-            <div class="skills__group"><h3 class="label">Backend &amp; tools</h3><ul class="dotlist"><li>PostgreSQL</li><li>MySQL</li><li>SQL Server</li><li>FastAPI</li><li>Flask</li><li>Streamlit</li><li>pytest</li><li>Git</li><li>Linux</li><li>AWS (SageMaker, S3)</li></ul></div>
-          </div>
-
-          <div class="awards">
-            <div>
-              <h3 class="subhead">Awards</h3>
-              <ul class="award-list">
-                <li><span class="award-list__when">Apr 2026</span><span><b>1st place, ANRF AISEHack 2026</b>Theme 2: Pollution forecasting</span></li>
-                <li><span class="award-list__when">Oct 2025</span><span><b>2nd place, Yugantar 2025</b>Smart India Hackathon internal round</span></li>
-              </ul>
-            </div>
-            <div>
-              <h3 class="subhead">Certifications</h3>
-              <ul class="award-list">
-                <li><span class="award-list__when">NPTEL</span><span><b>Machine Learning with Python Programming</b></span></li>
-                <li><span class="award-list__when">NPTEL</span><span><b>Deep Learning</b>IIT Ropar</span></li>
-                <li><span class="award-list__when">Google</span><span><b>Data Analytics</b></span></li>
-                <li><span class="award-list__when">AWS</span><span><b>AWS Builder Essentials</b></span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section section--contact" id="contact" aria-labelledby="contact-h">
-      <div class="wrap section__grid">
-        <header class="section__head"><span class="section__num">06</span><h2 id="contact-h">Contact</h2></header>
-        <div class="section__body">
-          <p class="contact__lede">I'm looking for a six-month research internship from December 2026 to May 2027, ideally on inference efficiency. Email is the fastest way to reach me.</p>
-          <div class="email-row">
-            <a class="email" href="mailto:hypertex.work@gmail.com">hypertex.work@gmail.com</a>
-            <button class="btn btn--sm js-copy" type="button" data-copy="hypertex.work@gmail.com"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span></button>
-          </div>
-          <p class="contact__time"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Mumbai, India · IST (UTC+5:30)<span class="js-ist-wrap" hidden> · <span class="js-ist"></span> local time</span></p>
-          <ul class="contact-links">
-            <li><a href="https://github.com/kartiks15" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg><span><b>GitHub</b><small>kartiks15</small></span><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-            <li><a href="https://www.linkedin.com/in/kartiksoni1/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg><span><b>LinkedIn</b><small>in/kartiksoni1</small></span><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-            <li><a href="docs/Kartik_Resume.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-file"/></svg><span><b>Resume</b><small>PDF</small></span><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-            <li><a href="docs/Research%20Associate%20Statement.pdf" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-file"/></svg><span><b>Research statement</b><small>PDF</small></span><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <footer class="footer">
+      <p class="footer__name">Kartik Soni</p>
+      <p>Updated November 2026</p>
+    </footer>
   </main>
-
-  <footer class="footer">
-    <div class="wrap footer__inner">
-      <p>© 2026 Kartik Soni</p>
-      <p>Updated October 2026</p>
-    </div>
-  </footer>
 
   <div class="tip" id="tip" role="tooltip" hidden></div>
 </body>

@@ -9,17 +9,18 @@
     get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
     set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* storage blocked */ } },
   };
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Theme */
+  /* Theme: dark by default, light on request */
   const themeBtn = $('.js-theme');
   const metaTheme = $('meta[name="theme-color"]');
 
   function applyTheme(t) {
     doc.dataset.theme = t;
     if (themeBtn) themeBtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-    if (metaTheme) metaTheme.content = t === 'dark' ? '#0f1113' : '#f8f8f5';
+    if (metaTheme) metaTheme.content = t === 'dark' ? '#131312' : '#f7f6f2';
   }
-  applyTheme(doc.dataset.theme === 'dark' ? 'dark' : 'light');
+  applyTheme(doc.dataset.theme === 'light' ? 'light' : 'dark');
 
   if (themeBtn) {
     themeBtn.addEventListener('click', () => {
@@ -28,49 +29,9 @@
       store.set('ks-theme', next);
     });
   }
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (!store.get('ks-theme')) applyTheme(e.matches ? 'dark' : 'light');
-  });
-
-  /* Navigation: border on scroll, mobile menu, current section */
-  const nav = $('#nav');
-  const menuBtn = $('.js-menu');
-  const links = $$('.nav__links a');
-
-  const onScroll = () => nav.classList.toggle('is-scrolled', scrollY > 8);
-  addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  function setMenu(open) {
-    nav.classList.toggle('is-open', open);
-    menuBtn.setAttribute('aria-expanded', String(open));
-    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  }
-  if (menuBtn) {
-    menuBtn.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
-    links.forEach((a) => a.addEventListener('click', () => setMenu(false)));
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); menuBtn.focus(); }
-    });
-    matchMedia('(min-width: 880px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
-  }
-
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (!en.isIntersecting) return;
-        links.forEach((a) => {
-          if (a.getAttribute('href') === `#${en.target.id}`) a.setAttribute('aria-current', 'true');
-          else a.removeAttribute('aria-current');
-        });
-      });
-    }, { rootMargin: '-40% 0px -55% 0px' });
-    $$('main > section[id]').forEach((s) => io.observe(s));
-  }
 
   /* Copy email */
   $$('.js-copy').forEach((btn) => {
-    const label = btn.querySelector('span');
     btn.addEventListener('click', async () => {
       const text = btn.dataset.copy;
       let ok = false;
@@ -88,9 +49,9 @@
         try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
         ta.remove();
       }
-      label.textContent = ok ? 'Copied' : 'Press Ctrl+C';
+      btn.textContent = ok ? 'Copied' : 'Press Ctrl+C';
       btn.classList.toggle('is-done', ok);
-      setTimeout(() => { label.textContent = 'Copy'; btn.classList.remove('is-done'); }, 2000);
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('is-done'); }, 2000);
     });
   });
 
@@ -100,7 +61,7 @@
     const show = (row) => {
       tip.textContent = row.dataset.tip;
       tip.hidden = false;
-      const anchor = row.querySelector('.bar') || row;
+      const anchor = row.querySelector('.grow__bars') || row;
       const r = anchor.getBoundingClientRect();
       const w = tip.offsetWidth;
       const x = Math.min(innerWidth - w / 2 - 8, Math.max(w / 2 + 8, r.left + r.width / 2));
@@ -128,5 +89,42 @@
       istWrap.hidden = false;
       setInterval(tick, 30000);
     } catch (e) { /* time zone data unavailable */ }
+  }
+
+  /* Entrance: each part of a section rises in turn, once. Content stays visible without this. */
+  if (reduceMotion || !('IntersectionObserver' in window)) return;
+
+  const groups = [
+    ['.intro', '.intro__top, .intro__pitch, .intro__meta, .intro__status, .buttons li, .stats li'],
+    ['.row', ':scope > .row__label, .prose > p, .focus > div, .entry, .more h3, .more li, .plain li, .sub, .skills > div, .contact__lede, .contact__email, .contact__time, .next'],
+  ];
+
+  // Parts that come into view together are staggered by their order in this batch.
+  const io = new IntersectionObserver((entries) => {
+    entries
+      .filter((en) => en.isIntersecting)
+      .forEach((en, i) => {
+        if (!en.target.classList.contains('chart')) en.target.style.setProperty('--i', String(Math.min(i, 6)));
+        en.target.classList.add('is-in');
+        io.unobserve(en.target);
+      });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+
+  groups.forEach(([scope, parts]) => {
+    $$(scope).forEach((root) => {
+      $$(parts, root).forEach((el) => {
+        el.classList.add('reveal');
+        io.observe(el);
+      });
+    });
+  });
+
+  const chart = $('.chart');
+  if (chart) {
+    $$('.grow', chart).forEach((row, i) => {
+      $$('.gbar', row).forEach((bar) => bar.style.setProperty('--i', String((i % 5) + 1)));
+    });
+    chart.classList.add('will-grow');
+    io.observe(chart);
   }
 })();
